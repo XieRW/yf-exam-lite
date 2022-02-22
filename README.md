@@ -1,4 +1,4 @@
-# 云帆培训考试系统 开源版
+# 云帆培训考试系统
 
 # 项目演示
 开源版本：https://github.com/XieRW/yf-exam-lite.git
