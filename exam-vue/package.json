@@ -1,7 +1,7 @@
 {
   "name": "exam-vue",
   "version": "4.2.1",
-  "description": "云帆考试系统",
+  "description": "考试系统",
   "author": "18365918@qq.com",
   "license": "MIT",
   "scripts": {

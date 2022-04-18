@@ -8,6 +8,7 @@ import com.yf.exam.modules.qu.dto.export.QuExportDTO;
 import com.yf.exam.modules.qu.dto.request.QuQueryReqDTO;
 import com.yf.exam.modules.qu.entity.Qu;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
