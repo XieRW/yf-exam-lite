@@ -4,7 +4,6 @@
 项目地址：https://github.com/XieRW/yf-exam-lite.git
 管理账号：admin/admin 学员账号：person/person   
 
-
 # 介绍
 一款多角色在线培训考试系统，系统集成了用户管理、角色管理、部门管理、题库管理、试题管理、试题导入导出、考试管理、在线考试、错题训练等功能，考试流程完善。
 
