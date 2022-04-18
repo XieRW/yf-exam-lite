@@ -1,7 +1,7 @@
-# 云帆培训考试系统
+# 在线考试系统
 
 # 项目演示
-开源版本：https://github.com/XieRW/yf-exam-lite.git
+项目地址：https://github.com/XieRW/yf-exam-lite.git
 管理账号：admin/admin 学员账号：person/person   
 
 
