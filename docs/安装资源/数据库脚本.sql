@@ -1152,7 +1152,7 @@ CREATE TABLE `sys_config` (
 -- Records of sys_config
 -- ----------------------------
 BEGIN;
-INSERT INTO `sys_config` VALUES ('1', '云帆在线培训考试系统', NULL, NULL, '2020-12-03 16:51:30', '2020-12-03 16:51:30', '', '', 1);
+INSERT INTO `sys_config` VALUES ('1', '在线培训考试系统', NULL, NULL, '2020-12-03 16:51:30', '2020-12-03 16:51:30', '', '', 1);
 COMMIT;
 
 -- ----------------------------
@@ -1173,7 +1173,7 @@ CREATE TABLE `sys_depart` (
 -- Records of sys_depart
 -- ----------------------------
 BEGIN;
-INSERT INTO `sys_depart` VALUES ('1302853644578000898', 1, '0', '北京云帆互联科技有限公司', 'A01', 1);
+INSERT INTO `sys_depart` VALUES ('1302853644578000898', 1, '0', '北京互联科技有限公司', 'A01', 1);
 INSERT INTO `sys_depart` VALUES ('1302855940200284161', 1, '1302855776496599041', '后端组', 'A01A01A01', 2);
 INSERT INTO `sys_depart` VALUES ('1302855994843676674', 1, '1302855776496599041', '前端组', 'A01A01A02', 1);
 INSERT INTO `sys_depart` VALUES ('1302856017283203073', 1, '1302855776496599041', '产品组', 'A01A01A03', 3);

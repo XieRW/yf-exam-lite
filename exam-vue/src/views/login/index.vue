@@ -72,7 +72,7 @@
     </el-main>
 
     <el-footer style="background: #ffffff; text-align: center; line-height: 50px;font-size: 14px" height="50px">
-      <a href="https://lp.yfhl.net" target="_blank" style="margin-left: 10px">©2020 云帆互联</a>
+      <a href="https://lp.yfhl.net" target="_blank" style="margin-left: 10px">©2020 互联</a>
     </el-footer>
 
   </el-container>

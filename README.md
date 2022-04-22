@@ -2,7 +2,7 @@
 
 # 项目演示
 项目地址：https://github.com/XieRW/yf-exam-lite.git
-管理账号：admin/admin 学员账号：person/person   
+管理账号：admin/admin 学员账号：person/person
 
 # 介绍
 一款多角色在线培训考试系统，系统集成了用户管理、角色管理、部门管理、题库管理、试题管理、试题导入导出、考试管理、在线考试、错题训练等功能，考试流程完善。
@@ -48,51 +48,10 @@ https://cdn.yfhl.net/java-win/mysql-installer-community-5.7.31.0.msi
 -- 安装数据库管理工具    
 https://cdn.yfhl.net/java-win/SQLyog.12.3.1.0.zip    
 
-# 安装视频：    
-https://www.ixigua.com/7041491265027834381?utm_source=xiguastudio
-
-
-
-
-
-
-
 # 快速运行
 1、自行安装MySQL数据库（版本最好大于5.7），将`安装资源中`的`数据库初始化.sql`导入到安装好的数据库    
-2、安装Java环境，要求JDK版本大于1.7    
+2、安装Java环境，要求JDK版本大于1.8
 3、请修改外置配置文件：application.properties 改成您自己的MySQL配置    
 4、Windows通过start.bat运行，Linux运行start.sh运行    
 5、如果无意外，可通过：http://localhost:8101 访问到项目了    
-6、管理员账号密码：admin/admin 学员账号：person/person    
-
-
-# 其它支持
-
-网站：https://lp-exam.yfhl.net 
-
-QQ交流群：865330294 
-
-杨经理：     
-    邮箱：626264481@qq.com   
-    手机：18710213152 
-
-郭经理：     
-    邮箱：835487894@qq.com   
-    手机：18603038204
-
-
-
-
-![输入图片说明](https://images.gitee.com/uploads/images/2020/1207/173238_e6c22c67_2189748.jpeg "17-32-10.jpg")
-![主界面](https://images.gitee.com/uploads/images/2020/1019/182239_4a87af30_2189748.jpeg "222.jpg")
-![输入图片说明](https://images.gitee.com/uploads/images/2020/1019/182532_04c42741_2189748.jpeg "444.jpg")
-![输入图片说明](https://images.gitee.com/uploads/images/2020/1019/182543_44dcc2d7_2189748.jpeg "555.jpg")
-![输入图片说明](https://images.gitee.com/uploads/images/2020/1019/182551_4d404492_2189748.jpeg "666.jpg")
-![输入图片说明](https://images.gitee.com/uploads/images/2020/1019/183109_fdc30de8_2189748.jpeg "777.jpg")
-![输入图片说明](https://images.gitee.com/uploads/images/2020/1019/183117_30b44530_2189748.jpeg "888.jpg")
-![输入图片说明](https://images.gitee.com/uploads/images/2020/1019/183023_2f3baeb9_2189748.jpeg "999.jpg")
-![输入图片说明](https://images.gitee.com/uploads/images/2020/1019/183032_f5016335_2189748.jpeg "1010.jpg")
-![输入图片说明](https://images.gitee.com/uploads/images/2020/1019/183040_38fd74ed_2189748.jpeg "1111.jpg")
-![输入图片说明](https://images.gitee.com/uploads/images/2020/1019/183047_a31619cd_2189748.jpeg "1212.jpg")
-
- 
+6、管理员账号密码：admin/admin 学员账号：person/person
