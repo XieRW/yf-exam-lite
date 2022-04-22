@@ -14,8 +14,8 @@ import java.util.List;
 * 试卷考题业务类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-05-25 16:33
+* @author xieRW
+* @since 2021-05-25 16:33
 */
 public interface PaperQuService extends IService<PaperQu> {
 
@@ -31,7 +31,7 @@ public interface PaperQuService extends IService<PaperQu> {
      * @param paperId
      * @return
      */
-    List<PaperQuDTO> listByPaper(String paperId);
+    List<PaperQuDTO> listByPaper(Long paperId);
 
     /**
      * 查找详情
@@ -39,7 +39,7 @@ public interface PaperQuService extends IService<PaperQu> {
      * @param quId
      * @return
      */
-    PaperQu findByKey(String paperId, String quId);
+    PaperQu findByKey(Long paperId, Long quId);
 
     /**
      * 根据组合索引更新
@@ -52,19 +52,19 @@ public interface PaperQuService extends IService<PaperQu> {
      * @param paperId
      * @return
      */
-    int sumObjective(String paperId);
+    int sumObjective(Long paperId);
 
     /**
      * 统计主观分
      * @param paperId
      * @return
      */
-    int sumSubjective(String paperId);
+    int sumSubjective(Long paperId);
 
     /**
      * 找出全部试题列表
      * @param paperId
      * @return
      */
-    List<PaperQuDetailDTO> listForPaperResult(String paperId);
+    List<PaperQuDetailDTO> listForPaperResult(Long paperId);
 }

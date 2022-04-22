@@ -6,13 +6,14 @@ import lombok.Data;
 
 import java.io.Serializable;
 
+
 /**
 * <p>
 * 角色请求类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-04-13 16:57
+* @author xieRW
+* @since 2021-04-13 16:57
 */
 @Data
 @ApiModel(value="角色", description="角色")
@@ -22,7 +23,7 @@ public class SysRoleDTO implements Serializable {
     
     
     @ApiModelProperty(value = "角色ID", required=true)
-    private String id;
+    private Long id;
     
     @ApiModelProperty(value = "角色名称", required=true)
     private String roleName;

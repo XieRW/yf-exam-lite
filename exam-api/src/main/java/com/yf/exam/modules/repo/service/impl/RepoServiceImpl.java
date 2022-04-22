@@ -18,8 +18,8 @@ import org.springframework.stereotype.Service;
 * 语言设置 服务实现类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-05-25 13:23
+* @author xieRW
+* @since 2021-05-25 13:23
 */
 @Service
 public class RepoServiceImpl extends ServiceImpl<RepoMapper, Repo> implements RepoService {
@@ -43,13 +43,13 @@ public class RepoServiceImpl extends ServiceImpl<RepoMapper, Repo> implements Re
     }
 
     @Override
-    public void refreshStat(String repoId) {
+    public void refreshStat(Long repoId) {
         baseMapper.refreshStat(repoId);
     }
 
 
     @Override
-    public String findByName(String name) {
+    public Long findByName(String name) {
         QueryWrapper<Repo> wrapper = new QueryWrapper<>();
         wrapper.lambda().eq(Repo::getTitle, name);
         Repo repo = this.getOne(wrapper);

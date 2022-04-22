@@ -30,7 +30,7 @@ public class PagingReqDTO<T> {
 
     @JsonIgnore
     @ApiModelProperty(value = "当前用户的ID")
-    private String userId;
+    private Long userId;
 
     /**
      * 转换成MyBatis的简单分页对象

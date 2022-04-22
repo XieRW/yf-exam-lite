@@ -52,8 +52,8 @@ import java.util.*;
 * 语言设置 服务实现类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-05-25 16:33
+* @author xieRW
+* @since 2021-05-25 16:33
 */
 @Service
 public class PaperServiceImpl extends ServiceImpl<PaperMapper, Paper> implements PaperService {
@@ -102,7 +102,7 @@ public class PaperServiceImpl extends ServiceImpl<PaperMapper, Paper> implements
 
 
     @Override
-    public String createPaper(String userId, String examId) {
+    public Long createPaper(Long userId, Long examId) {
 
         // 查找考试
         ExamDTO exam = examService.findById(examId);
@@ -129,13 +129,13 @@ public class PaperServiceImpl extends ServiceImpl<PaperMapper, Paper> implements
         }
 
         //保存试卷内容
-        String paperId = this.savePaper(userId, exam, quList);
+        Long paperId = this.savePaper(userId, exam, quList);
 
         return paperId;
     }
 
     @Override
-    public ExamDetailRespDTO paperDetail(String paperId) {
+    public ExamDetailRespDTO paperDetail(Long paperId) {
 
 
         ExamDetailRespDTO respDTO = new ExamDetailRespDTO();
@@ -169,7 +169,7 @@ public class PaperServiceImpl extends ServiceImpl<PaperMapper, Paper> implements
     }
 
     @Override
-    public ExamResultRespDTO paperResult(String paperId) {
+    public ExamResultRespDTO paperResult(Long paperId) {
 
         ExamResultRespDTO respDTO = new ExamResultRespDTO();
 
@@ -184,7 +184,7 @@ public class PaperServiceImpl extends ServiceImpl<PaperMapper, Paper> implements
     }
 
     @Override
-    public PaperQuDetailDTO findQuDetail(String paperId, String quId) {
+    public PaperQuDetailDTO findQuDetail(Long paperId, Long quId) {
 
         PaperQuDetailDTO respDTO = new PaperQuDetailDTO();
         // 问题
@@ -209,7 +209,7 @@ public class PaperServiceImpl extends ServiceImpl<PaperMapper, Paper> implements
      * @param examId
      * @return
      */
-    private List<PaperQu> generateByRepo(String examId, Integer level){
+    private List<PaperQu> generateByRepo(Long examId, Integer level){
 
         // 查找规则指定的题库
         List<ExamRepoExtDTO> list = examRepoService.listByExam(examId);
@@ -218,8 +218,7 @@ public class PaperServiceImpl extends ServiceImpl<PaperMapper, Paper> implements
         List<PaperQu> quList = new ArrayList<>();
 
         //排除ID，避免题目重复
-        List<String> excludes = new ArrayList<>();
-        excludes.add("none");
+        List<Long> excludes = new ArrayList<>();
 
         if (!CollectionUtils.isEmpty(list)) {
             for (ExamRepoExtDTO item : list) {
@@ -303,7 +302,7 @@ public class PaperServiceImpl extends ServiceImpl<PaperMapper, Paper> implements
      * @param quList
      * @return
      */
-    private String savePaper(String userId, ExamDTO exam, List<PaperQu> quList) {
+    private Long savePaper(Long userId, ExamDTO exam, List<PaperQu> quList) {
 
 
         // 查找用户
@@ -346,7 +345,7 @@ public class PaperServiceImpl extends ServiceImpl<PaperMapper, Paper> implements
      * @param paperId
      * @param quList
      */
-    private void savePaperQu(String paperId, List<PaperQu> quList){
+    private void savePaperQu(Long paperId, List<PaperQu> quList){
 
         List<PaperQu> batchQuList = new ArrayList<>();
         List<PaperQuAnswer> batchAnswerList = new ArrayList<>();
@@ -356,7 +355,6 @@ public class PaperServiceImpl extends ServiceImpl<PaperMapper, Paper> implements
 
             item.setPaperId(paperId);
             item.setSort(sort);
-            item.setId(IdWorker.getIdStr());
 
             //回答列表
             List<QuAnswer> answerList = quAnswerService.listAnswerByRandom(item.getQuId());
@@ -366,7 +364,6 @@ public class PaperServiceImpl extends ServiceImpl<PaperMapper, Paper> implements
                 int ii = 0;
                 for (QuAnswer answer : answerList) {
                     PaperQuAnswer paperQuAnswer = new PaperQuAnswer();
-                    paperQuAnswer.setId(UUID.randomUUID().toString());
                     paperQuAnswer.setPaperId(paperId);
                     paperQuAnswer.setQuId(answer.getQuId());
                     paperQuAnswer.setAnswerId(answer.getId());
@@ -436,7 +433,7 @@ public class PaperServiceImpl extends ServiceImpl<PaperMapper, Paper> implements
 
     @Transactional(rollbackFor = Exception.class)
     @Override
-    public void handExam(String paperId) {
+    public void handExam(Long paperId) {
 
         //获取试卷信息
         Paper paper = paperService.getById(paperId);
@@ -546,7 +543,7 @@ public class PaperServiceImpl extends ServiceImpl<PaperMapper, Paper> implements
 
     @Transactional(rollbackFor = Exception.class)
     @Override
-    public void breakExam(String paperId) {
+    public void breakExam(Long paperId) {
 
         Paper paper = new Paper();
         paper.setId(paperId);

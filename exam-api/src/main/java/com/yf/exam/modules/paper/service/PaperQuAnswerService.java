@@ -14,8 +14,8 @@ import java.util.List;
 * 试卷考题备选答案业务类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-05-25 16:33
+* @author xieRW
+* @since 2021-05-25 16:33
 */
 public interface PaperQuAnswerService extends IService<PaperQuAnswer> {
 
@@ -32,7 +32,7 @@ public interface PaperQuAnswerService extends IService<PaperQuAnswer> {
      * @param quId
      * @return
      */
-    List<PaperQuAnswerExtDTO> listForExam(String paperId, String quId);
+    List<PaperQuAnswerExtDTO> listForExam(Long paperId, Long quId);
 
     /**
      * 查找答案列表，用来填充
@@ -40,5 +40,5 @@ public interface PaperQuAnswerService extends IService<PaperQuAnswer> {
      * @param quId
      * @return
      */
-    List<PaperQuAnswer> listForFill(String paperId, String quId);
+    List<PaperQuAnswer> listForFill(Long paperId, Long quId);
 }

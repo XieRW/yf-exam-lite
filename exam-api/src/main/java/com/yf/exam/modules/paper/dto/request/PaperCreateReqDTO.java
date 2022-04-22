@@ -14,9 +14,9 @@ import lombok.Data;
 public class PaperCreateReqDTO extends BaseDTO {
 
     @JsonIgnore
-    private String userId;
+    private Long userId;
 
     @ApiModelProperty(value = "考试ID", required=true)
-    private String examId;
+    private Long examId;
 
 }

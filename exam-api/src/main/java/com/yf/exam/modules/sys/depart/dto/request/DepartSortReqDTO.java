@@ -6,13 +6,14 @@ import lombok.Data;
 
 import java.io.Serializable;
 
+
 /**
 * <p>
 * 部门排序请求类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-03-14 10:37
+* @author xieRW
+* @since 2021-03-14 10:37
 */
 @Data
 @ApiModel(value="部门排序请求类", description="部门排序请求类")
@@ -21,7 +22,7 @@ public class DepartSortReqDTO implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @ApiModelProperty(value = "分类ID")
-    private String id;
+    private Long id;
 
     @ApiModelProperty(value = "排序，0下降，1上升")
     private Integer sort;

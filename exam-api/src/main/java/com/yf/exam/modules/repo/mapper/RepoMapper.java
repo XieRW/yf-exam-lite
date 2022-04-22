@@ -13,8 +13,8 @@ import org.apache.ibatis.annotations.Param;
 * 题库Mapper
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-05-25 13:23
+* @author xieRW
+* @since 2021-05-25 13:23
 */
 public interface RepoMapper extends BaseMapper<Repo> {
 
@@ -30,6 +30,6 @@ public interface RepoMapper extends BaseMapper<Repo> {
      * 更新统计数量
      * @param repoId
      */
-    void refreshStat(@Param("repoId") String repoId);
+    void refreshStat(@Param("repoId") Long repoId);
 
 }

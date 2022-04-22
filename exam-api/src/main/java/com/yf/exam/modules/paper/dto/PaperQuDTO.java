@@ -11,8 +11,8 @@ import java.io.Serializable;
 * 试卷考题请求类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-05-25 17:31
+* @author xieRW
+* @since 2021-05-25 17:31
 */
 @Data
 @ApiModel(value="试卷考题", description="试卷考题")
@@ -22,13 +22,13 @@ public class PaperQuDTO implements Serializable {
 
 
     @ApiModelProperty(value = "ID", required=true)
-    private String id;
+    private Long id;
 
     @ApiModelProperty(value = "试卷ID", required=true)
     private String paperId;
 
     @ApiModelProperty(value = "题目ID", required=true)
-    private String quId;
+    private Long quId;
 
     @ApiModelProperty(value = "题目类型", required=true)
     private Integer quType;

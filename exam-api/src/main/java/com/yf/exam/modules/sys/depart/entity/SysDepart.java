@@ -7,13 +7,15 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import lombok.Data;
 
+
+
 /**
 * <p>
 * 部门信息实体类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-09-02 17:25
+* @author xieRW
+* @since 2021-09-02 17:25
 */
 @Data
 @TableName("sys_depart")
@@ -24,8 +26,8 @@ public class SysDepart extends Model<SysDepart> {
     /**
     * ID
     */
-    @TableId(value = "id", type = IdType.ASSIGN_ID)
-    private String id;
+    @TableId(value = "id", type = IdType.AUTO)
+    private Long id;
     
     /**
     * 1公司2部门
@@ -37,7 +39,7 @@ public class SysDepart extends Model<SysDepart> {
     * 所属上级
     */
     @TableField("parent_id")
-    private String parentId;
+    private Long parentId;
     
     /**
     * 部门名称

@@ -4,6 +4,7 @@ import com.yf.exam.core.annon.Dict;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+
 import java.util.Date;
 
 import java.io.Serializable;
@@ -13,8 +14,8 @@ import java.io.Serializable;
 * 考试记录数据传输类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-09-21 15:13
+* @author xieRW
+* @since 2021-09-21 15:13
 */
 @Data
 @ApiModel(value="考试记录", description="考试记录")
@@ -23,14 +24,14 @@ public class UserExamDTO implements Serializable {
     private static final long serialVersionUID = 1L;
     
     
-    private String id;
+    private Long id;
     
     @ApiModelProperty(value = "用户ID", required=true)
-    private String userId;
+    private Long userId;
 
     @Dict(dictTable = "el_exam", dicText = "title", dicCode = "id")
     @ApiModelProperty(value = "考试ID", required=true)
-    private String examId;
+    private Long examId;
     
     @ApiModelProperty(value = "考试次数", required=true)
     private Integer tryCount;

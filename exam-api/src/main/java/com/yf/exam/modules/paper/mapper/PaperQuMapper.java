@@ -12,8 +12,8 @@ import java.util.List;
 * 试卷考题Mapper
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-05-25 16:33
+* @author xieRW
+* @since 2021-05-25 16:33
 */
 public interface PaperQuMapper extends BaseMapper<PaperQu> {
 
@@ -22,21 +22,21 @@ public interface PaperQuMapper extends BaseMapper<PaperQu> {
      * @param paperId
      * @return
      */
-    int sumObjective(@Param("paperId") String paperId);
+    int sumObjective(@Param("paperId") Long paperId);
 
     /**
      * 统计主观分
      * @param paperId
      * @return
      */
-    int sumSubjective(@Param("paperId") String paperId);
+    int sumSubjective(@Param("paperId") Long paperId);
 
     /**
      * 找出全部试题列表
      * @param paperId
      * @return
      */
-    List<PaperQuDetailDTO> listByPaper(@Param("paperId") String paperId);
+    List<PaperQuDetailDTO> listByPaper(@Param("paperId") Long paperId);
 }
 
 

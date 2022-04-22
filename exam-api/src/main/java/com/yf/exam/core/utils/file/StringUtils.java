@@ -10,7 +10,7 @@ import java.util.Map;
 /**
  * 一些字符的处理，如：将map转换成xml，xml转换成map，从文字中提取中文，判断文字是否全中文
  * ClassName: StringUtil <br/>
- * date: 2018年1月13日 下午7:07:28 <br/>
+ * date: 2021年1月13日 下午7:07:28 <br/>
  *
  * @author Bool
  * @version
@@ -113,7 +113,7 @@ public class StringUtils {
     }
     
     public static void main(String[] args) {
-    	System.out.println(extractChinese("你好，我是聪明笨狗，It's me!"));
+    	System.out.println(extractChinese("你好，我是xieRW，It's me!"));
 	}
 
 }

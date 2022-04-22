@@ -8,8 +8,8 @@ import org.apache.ibatis.annotations.Param;
 * 机主信息Mapper
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-08-22 13:46
+* @author xieRW
+* @since 2021-08-22 13:46
 */
 @Mapper
 public interface SysDictMapper {

@@ -4,7 +4,7 @@ package com.yf.exam.core.enums;
  * 通用的状态枚举信息
  *
  * @author bool
- * @date 2019-09-17 17:57
+ * @date 2021-09-17 17:57
  */
 public interface CommonState {
 

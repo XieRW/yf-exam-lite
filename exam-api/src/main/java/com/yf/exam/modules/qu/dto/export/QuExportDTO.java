@@ -4,6 +4,7 @@ import com.yf.exam.core.utils.excel.annotation.ExcelField;
 import com.yf.exam.core.utils.excel.fieldtype.ListType;
 import lombok.Data;
 
+
 import java.util.List;
 
 /**
@@ -18,7 +19,7 @@ public class QuExportDTO {
     /**
      *
      */
-    private String qId;
+    private Long qId;
 
     @ExcelField(title="题目序号", align=2, sort=1)
     private String no;
@@ -33,7 +34,7 @@ public class QuExportDTO {
     @ExcelField(title="题目视频", align=2, sort=6)
     private String qVideo;
     @ExcelField(title="所属题库", align=2, sort=7, fieldType = ListType.class)
-    private List<String> repoList;
+    private List<Long> repoList;
     @ExcelField(title="是否正确项", align=2, sort=8)
     private String aIsRight;
     @ExcelField(title="选项内容", align=2, sort=9)

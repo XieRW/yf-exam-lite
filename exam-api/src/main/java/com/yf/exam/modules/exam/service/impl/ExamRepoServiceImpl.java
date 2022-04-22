@@ -20,8 +20,8 @@ import java.util.List;
 * 考试题库业务实现类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-09-05 11:14
+* @author xieRW
+* @since 2021-09-05 11:14
 */
 @Service
 public class ExamRepoServiceImpl extends ServiceImpl<ExamRepoMapper, ExamRepo> implements ExamRepoService {
@@ -29,7 +29,7 @@ public class ExamRepoServiceImpl extends ServiceImpl<ExamRepoMapper, ExamRepo> i
 
     @Transactional(rollbackFor = Exception.class)
     @Override
-    public void saveAll(String examId, List<ExamRepoExtDTO> list) {
+    public void saveAll(Long examId, List<ExamRepoExtDTO> list) {
 
         // 先删除
         QueryWrapper<ExamRepo> wrapper = new QueryWrapper<>();
@@ -43,19 +43,19 @@ public class ExamRepoServiceImpl extends ServiceImpl<ExamRepoMapper, ExamRepo> i
         List<ExamRepo> repos = BeanMapper.mapList(list, ExamRepo.class);
         for(ExamRepo item: repos){
             item.setExamId(examId);
-            item.setId(IdWorker.getIdStr());
+            item.setId(IdWorker.getId());
         }
 
         this.saveBatch(repos);
     }
 
     @Override
-    public List<ExamRepoExtDTO> listByExam(String examId) {
+    public List<ExamRepoExtDTO> listByExam(Long examId) {
         return baseMapper.listByExam(examId);
     }
 
     @Override
-    public void clear(String examId) {
+    public void clear(Long examId) {
 
         // 先删除
         QueryWrapper<ExamRepo> wrapper = new QueryWrapper<>();

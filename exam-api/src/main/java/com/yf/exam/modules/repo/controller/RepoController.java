@@ -30,8 +30,8 @@ import java.util.List;
 * 题库控制器
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-05-25 13:25
+* @author xieRW
+* @since 2021-05-25 13:25
 */
 @Api(tags={"题库"})
 @RestController

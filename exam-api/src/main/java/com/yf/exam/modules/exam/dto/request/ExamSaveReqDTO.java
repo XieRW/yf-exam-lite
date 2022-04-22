@@ -13,8 +13,8 @@ import java.util.List;
 * 考试保存请求类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-07-25 16:18
+* @author xieRW
+* @since 2021-07-25 16:18
 */
 @Data
 @ApiModel(value="考试保存请求类", description="考试保存请求类")
@@ -27,6 +27,6 @@ public class ExamSaveReqDTO extends ExamDTO {
     private List<ExamRepoExtDTO> repoList;
 
     @ApiModelProperty(value = "考试部门列表", required=true)
-    private List<String> departIds;
+    private List<Long> departIds;
 
 }

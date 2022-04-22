@@ -1,5 +1,5 @@
 /**
- * Copyright &copy; 2015-2020 <a href="http://www.jeeplus.org/">JeePlus</a> All rights reserved.
+ * Copyright &copy; 2015-2021 <a href="http://www.jeeplus.org/">JeePlus</a> All rights reserved.
  */
 package com.yf.exam.core.utils.excel.fieldtype;
 
@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * 字段类型转换
  * @author jeeplus
- * @version 2016-5-29
+ * @version 2021-5-29
  */
 public class ListType {
 

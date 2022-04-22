@@ -11,18 +11,18 @@ import lombok.Data;
  * 主键通用请求类，用于根据ID查询
  * </p>
  *
- * @author 聪明笨狗
- * @since 2019-04-20 12:15
+ * @author xieRW
+ * @since 2021-04-20 12:15
  */
 @Data
-@ApiModel(value="主键通用请求类", description="主键通用请求类")
+@ApiModel(value = "主键通用请求类", description = "主键通用请求类")
 public class BaseIdReqDTO extends BaseDTO {
 
 
-    @ApiModelProperty(value = "主键ID", required=true)
-    private String id;
+    @ApiModelProperty(value = "主键ID", required = true)
+    private Long id;
 
     @JsonIgnore
-    private String userId;
+    private Long userId;
 
 }

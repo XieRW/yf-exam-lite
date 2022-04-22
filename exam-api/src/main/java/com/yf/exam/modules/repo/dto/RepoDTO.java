@@ -5,6 +5,7 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 import java.io.Serializable;
+
 import java.util.Date;
 
 /**
@@ -12,8 +13,8 @@ import java.util.Date;
 * 题库请求类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-05-25 13:23
+* @author xieRW
+* @since 2021-05-25 13:23
 */
 @Data
 @ApiModel(value="题库", description="题库")
@@ -23,7 +24,7 @@ public class RepoDTO implements Serializable {
 
 
     @ApiModelProperty(value = "题库ID", required=true)
-    private String id;
+    private Long id;
 
     @ApiModelProperty(value = "题库编号", required=true)
     private String code;

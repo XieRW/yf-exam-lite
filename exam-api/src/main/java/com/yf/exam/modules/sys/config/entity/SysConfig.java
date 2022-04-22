@@ -7,13 +7,15 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import lombok.Data;
 
+
+
 /**
 * <p>
 * 通用配置实体类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-04-17 09:12
+* @author xieRW
+* @since 2021-04-17 09:12
 */
 @Data
 @TableName("sys_config")
@@ -25,7 +27,7 @@ public class SysConfig extends Model<SysConfig> {
      * ID
      */
     @TableId(value = "id", type = IdType.ID_WORKER_STR)
-    private String id;
+    private Long id;
 
     /**
      * 系统名称

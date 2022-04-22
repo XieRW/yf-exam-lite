@@ -13,9 +13,9 @@ import lombok.Data;
 public class PaperQuQueryDTO extends BaseDTO {
 
     @ApiModelProperty(value = "试卷ID", required=true)
-    private String paperId;
+    private Long paperId;
 
     @ApiModelProperty(value = "题目ID", required=true)
-    private String quId;
+    private Long quId;
 
 }

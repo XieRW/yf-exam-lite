@@ -7,6 +7,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import lombok.Data;
 
+
 import java.util.Date;
 
 /**
@@ -14,8 +15,8 @@ import java.util.Date;
 * 管理用户实体类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-04-13 16:57
+* @author xieRW
+* @since 2021-04-13 16:57
 */
 @Data
 @TableName("sys_user")
@@ -26,8 +27,8 @@ public class SysUser extends Model<SysUser> {
     /**
      * ID
      */
-    @TableId(value = "id", type = IdType.ASSIGN_ID)
-    private String id;
+    @TableId(value = "id", type = IdType.AUTO)
+    private Long id;
 
     /**
      * 用户名
@@ -61,7 +62,7 @@ public class SysUser extends Model<SysUser> {
      * 部门ID
      */
     @TableField("depart_id")
-    private String departId;
+    private Long departId;
 
     /**
      * 创建时间

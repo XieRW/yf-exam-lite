@@ -18,8 +18,8 @@ import org.springframework.stereotype.Service;
 * 语言设置 服务实现类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-04-13 16:57
+* @author xieRW
+* @since 2021-04-13 16:57
 */
 @Service
 public class SysRoleServiceImpl extends ServiceImpl<SysRoleMapper, SysRole> implements SysRoleService {

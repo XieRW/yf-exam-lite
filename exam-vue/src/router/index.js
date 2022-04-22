@@ -298,7 +298,7 @@ export const asyncRoutes = [
         path: 'depart',
         component: () => import('@/views/sys/depart'),
         name: 'SysDepart',
-        meta: { title: '部门管理', icon: 'tree' }
+        meta: { title: '班级管理', icon: 'tree' }
       },
 
       {

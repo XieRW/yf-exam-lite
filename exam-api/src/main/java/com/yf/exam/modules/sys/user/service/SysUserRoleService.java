@@ -13,8 +13,8 @@ import java.util.List;
 * 用户角色业务类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-04-13 16:57
+* @author xieRW
+* @since 2021-04-13 16:57
 */
 public interface SysUserRoleService extends IService<SysUserRole> {
 
@@ -30,7 +30,7 @@ public interface SysUserRoleService extends IService<SysUserRole> {
      * @param userId
      * @return
      */
-    List<String> listRoles(String userId);
+    List<String> listRoles(Long userId);
 
     /**
      * 保存全部角色
@@ -38,24 +38,24 @@ public interface SysUserRoleService extends IService<SysUserRole> {
      * @param ids
      * @return
      */
-    String saveRoles(String userId, List<String> ids);
+    String saveRoles(Long userId, List<String> ids);
 
     /**
      * 是否学生
      * @param userId
      * @return
      */
-    boolean isStudent(String userId);
+    boolean isStudent(Long userId);
 
     /**
      * 是否老师
      */
-    boolean isTeacher(String userId);
+    boolean isTeacher(Long userId);
 
     /**
      * 是否管理
      * @param userId
      * @return
      */
-    boolean isAdmin(String userId);
+    boolean isAdmin(Long userId);
 }

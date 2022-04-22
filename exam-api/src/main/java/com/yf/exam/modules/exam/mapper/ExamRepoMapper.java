@@ -12,8 +12,8 @@ import java.util.List;
 * 考试题库Mapper
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-09-05 11:14
+* @author xieRW
+* @since 2021-09-05 11:14
 */
 public interface ExamRepoMapper extends BaseMapper<ExamRepo> {
 
@@ -22,5 +22,5 @@ public interface ExamRepoMapper extends BaseMapper<ExamRepo> {
      * @param examId
      * @return
      */
-    List<ExamRepoExtDTO> listByExam(@Param("examId") String examId);
+    List<ExamRepoExtDTO> listByExam(@Param("examId") Long examId);
 }

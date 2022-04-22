@@ -13,8 +13,8 @@ import org.apache.ibatis.annotations.Param;
 * 考试记录Mapper
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-09-21 15:13
+* @author xieRW
+* @since 2021-09-21 15:13
 */
 public interface UserExamMapper extends BaseMapper<UserExam> {
 

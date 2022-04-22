@@ -18,8 +18,8 @@ import java.util.List;
 * 试卷业务类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-05-25 16:33
+* @author xieRW
+* @since 2021-05-25 16:33
 */
 public interface PaperService extends IService<Paper> {
 
@@ -29,7 +29,7 @@ public interface PaperService extends IService<Paper> {
      * @param examId
      * @return
      */
-    String createPaper(String userId, String examId);
+    Long createPaper(Long userId, Long examId);
 
 
     /**
@@ -37,14 +37,14 @@ public interface PaperService extends IService<Paper> {
      * @param paperId
      * @return
      */
-    ExamDetailRespDTO paperDetail(String paperId);
+    ExamDetailRespDTO paperDetail(Long paperId);
 
     /**
      * 考试结果
      * @param paperId
      * @return
      */
-    ExamResultRespDTO paperResult(String paperId);
+    ExamResultRespDTO paperResult(Long paperId);
 
     /**
      * 查找题目详情
@@ -52,7 +52,7 @@ public interface PaperService extends IService<Paper> {
      * @param quId
      * @return
      */
-    PaperQuDetailDTO findQuDetail(String paperId, String quId);
+    PaperQuDetailDTO findQuDetail(Long paperId, Long quId);
 
     /**
      * 填充答案
@@ -65,7 +65,7 @@ public interface PaperService extends IService<Paper> {
      * @param paperId
      * @return
      */
-    void handExam(String paperId);
+    void handExam(Long paperId);
 
     /**
      * 阅卷完成
@@ -91,7 +91,7 @@ public interface PaperService extends IService<Paper> {
      * 取消考试
      * @param paperId
      */
-    void breakExam(String paperId);
+    void breakExam(Long paperId);
 
 
 }

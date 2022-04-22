@@ -21,8 +21,8 @@ import java.util.List;
 * 语言设置 服务实现类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-05-25 16:33
+* @author xieRW
+* @since 2021-05-25 16:33
 */
 @Service
 public class PaperQuAnswerServiceImpl extends ServiceImpl<PaperQuAnswerMapper, PaperQuAnswer> implements PaperQuAnswerService {
@@ -44,12 +44,12 @@ public class PaperQuAnswerServiceImpl extends ServiceImpl<PaperQuAnswerMapper, P
      }
 
     @Override
-    public List<PaperQuAnswerExtDTO> listForExam(String paperId, String quId) {
+    public List<PaperQuAnswerExtDTO> listForExam(Long paperId, Long quId) {
         return baseMapper.list(paperId, quId);
     }
 
     @Override
-    public List<PaperQuAnswer> listForFill(String paperId, String quId) {
+    public List<PaperQuAnswer> listForFill(Long paperId, Long quId) {
         //查询条件
         QueryWrapper<PaperQuAnswer> wrapper = new QueryWrapper<>();
         wrapper.lambda()

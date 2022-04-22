@@ -22,8 +22,8 @@ import java.util.List;
 * 语言设置 服务实现类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-05-25 16:33
+* @author xieRW
+* @since 2021-05-25 16:33
 */
 @Service
 public class PaperQuServiceImpl extends ServiceImpl<PaperQuMapper, PaperQu> implements PaperQuService {
@@ -45,7 +45,7 @@ public class PaperQuServiceImpl extends ServiceImpl<PaperQuMapper, PaperQu> impl
      }
 
     @Override
-    public List<PaperQuDTO> listByPaper(String paperId) {
+    public List<PaperQuDTO> listByPaper(Long paperId) {
 
         //查询条件
         QueryWrapper<PaperQu> wrapper = new QueryWrapper<>();
@@ -57,7 +57,7 @@ public class PaperQuServiceImpl extends ServiceImpl<PaperQuMapper, PaperQu> impl
     }
 
     @Override
-    public PaperQu findByKey(String paperId, String quId) {
+    public PaperQu findByKey(Long paperId, Long quId) {
         //查询条件
         QueryWrapper<PaperQu> wrapper = new QueryWrapper<>();
         wrapper.lambda().eq(PaperQu::getPaperId, paperId)
@@ -78,17 +78,17 @@ public class PaperQuServiceImpl extends ServiceImpl<PaperQuMapper, PaperQu> impl
     }
 
     @Override
-    public int sumObjective(String paperId) {
+    public int sumObjective(Long paperId) {
         return baseMapper.sumObjective(paperId);
     }
 
     @Override
-    public int sumSubjective(String paperId) {
+    public int sumSubjective(Long paperId) {
         return baseMapper.sumSubjective(paperId);
     }
 
     @Override
-    public List<PaperQuDetailDTO> listForPaperResult(String paperId) {
+    public List<PaperQuDetailDTO> listForPaperResult(Long paperId) {
         return baseMapper.listByPaper(paperId);
     }
 }

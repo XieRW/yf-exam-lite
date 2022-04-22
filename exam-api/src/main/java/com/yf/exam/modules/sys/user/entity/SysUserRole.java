@@ -7,13 +7,15 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import lombok.Data;
 
+
+
 /**
 * <p>
 * 用户角色实体类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-04-13 16:57
+* @author xieRW
+* @since 2021-04-13 16:57
 */
 @Data
 @TableName("sys_user_role")
@@ -24,14 +26,14 @@ public class SysUserRole extends Model<SysUserRole> {
     /**
     * ID
     */
-    @TableId(value = "id", type = IdType.ASSIGN_ID)
-    private String id;
+    @TableId(value = "id", type = IdType.AUTO)
+    private Long id;
     
     /**
     * 用户ID
     */
     @TableField("user_id")
-    private String userId;
+    private Long userId;
     
     /**
     * 角色ID

@@ -6,13 +6,14 @@ import lombok.Data;
 
 import java.io.Serializable;
 
+
 /**
 * <p>
 * 试卷考题备选答案请求类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-05-25 17:31
+* @author xieRW
+* @since 2021-05-25 17:31
 */
 @Data
 @ApiModel(value="试卷考题备选答案", description="试卷考题备选答案")
@@ -22,7 +23,7 @@ public class PaperQuAnswerDTO implements Serializable {
 
 
     @ApiModelProperty(value = "自增ID", required=true)
-    private String id;
+    private Long id;
 
     @ApiModelProperty(value = "试卷ID", required=true)
     private String paperId;

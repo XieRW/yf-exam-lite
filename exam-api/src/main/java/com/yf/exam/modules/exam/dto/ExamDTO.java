@@ -8,6 +8,7 @@ import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
+
 import java.util.Date;
 
 /**
@@ -15,8 +16,8 @@ import java.util.Date;
 * 考试数据传输类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-07-25 16:18
+* @author xieRW
+* @since 2021-07-25 16:18
 */
 @Data
 @ApiModel(value="考试", description="考试")
@@ -27,7 +28,7 @@ public class ExamDTO implements Serializable {
 
 
     @ApiModelProperty(value = "ID", required=true)
-    private String id;
+    private Long id;
 
     @ApiModelProperty(value = "考试名称", required=true)
     private String title;

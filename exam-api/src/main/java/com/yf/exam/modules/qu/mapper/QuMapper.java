@@ -17,8 +17,8 @@ import java.util.List;
 * 问题题目Mapper
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-05-25 13:23
+* @author xieRW
+* @since 2021-05-25 13:23
 */
 public interface QuMapper extends BaseMapper<Qu> {
 
@@ -33,10 +33,10 @@ public interface QuMapper extends BaseMapper<Qu> {
      * @param size
      * @return
      */
-    List<Qu> listByRandom(@Param("repoId") String repoId,
+    List<Qu> listByRandom(@Param("repoId") Long repoId,
                           @Param("quType") Integer quType,
                           @Param("level") Integer level,
-                          @Param("excludes") List<String> excludes,
+                          @Param("excludes") List<Long> excludes,
                           @Param("size") Integer size);
 
     /**

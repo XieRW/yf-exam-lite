@@ -12,7 +12,7 @@ import java.io.InputStreamReader;
 /**
  * 文本处理类，用于处理读写一些文件内容，写一些日志等
  * ClassName: TextFileUtils <br/>
- * date: 2018年1月13日 下午6:49:04 <br/>
+ * date: 2021年1月13日 下午6:49:04 <br/>
  *
  * @author Bool
  * @version

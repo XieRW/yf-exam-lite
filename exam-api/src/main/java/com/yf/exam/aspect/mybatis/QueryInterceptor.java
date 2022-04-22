@@ -32,13 +32,10 @@ import java.util.Properties;
 @Log4j2
 @Intercepts({@Signature(type = StatementHandler.class, method = "prepare", args = {Connection.class, Integer.class}),})
 public class QueryInterceptor extends PaginationInterceptor implements Interceptor {
-
     /**
      * 客户ID
      */
     private static final String USER_FILTER = "{{userId}}";
-
-
 
     @Override
     public Object intercept(Invocation invocation) throws Throwable {
@@ -80,8 +77,6 @@ public class QueryInterceptor extends PaginationInterceptor implements Intercept
 
     }
 
-
-
     /**
      * 获取当前登录用户
      * @return
@@ -104,9 +99,10 @@ public class QueryInterceptor extends PaginationInterceptor implements Intercept
 
         // 当前用户
         SysUserLoginDTO user = this.getLoginUser();
-        String userId = user.getId();
-        if(StringUtils.isNotBlank(userId)){
-            return sql.replace(USER_FILTER, userId);
+        assert user != null;
+        Long userId = user.getId();
+        if(StringUtils.isNotBlank(userId.toString())){
+            return sql.replace(USER_FILTER, userId.toString());
         }
         return null;
     }

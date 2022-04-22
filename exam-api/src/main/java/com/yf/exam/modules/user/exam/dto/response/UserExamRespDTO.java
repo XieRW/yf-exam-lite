@@ -10,8 +10,8 @@ import lombok.Data;
 * 考试记录数据传输类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-09-21 15:13
+* @author xieRW
+* @since 2021-09-21 15:13
 */
 @Data
 @ApiModel(value="考试记录", description="考试记录")

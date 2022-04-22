@@ -1,5 +1,5 @@
 /**
- * Copyright &copy; 2015-2020 <a href="http://www.jeeplus.org/">JeePlus</a> All rights reserved.
+ * Copyright &copy; 2015-2021 <a href="http://www.jeeplus.org/">JeePlus</a> All rights reserved.
  */
 package com.yf.exam.core.utils.excel;
 
@@ -33,7 +33,7 @@ import java.util.List;
 /**
  * 导入Excel文件（支持“XLS”和“XLSX”格式）
  * @author jeeplus
- * @version 2016-03-10
+ * @version 2021-03-10
  */
 public class ImportExcel {
 	

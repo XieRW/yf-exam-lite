@@ -10,7 +10,7 @@ import java.io.Serializable;
  * 全局错误码定义，用于定义接口的响应数据，
  * 枚举名称全部使用代码命名，在系统中调用，免去取名难的问题。
  * @author bool 
- * @date 2019-06-14 21:15
+ * @date 2021-06-14 21:15
  */
 @NoArgsConstructor
 @AllArgsConstructor

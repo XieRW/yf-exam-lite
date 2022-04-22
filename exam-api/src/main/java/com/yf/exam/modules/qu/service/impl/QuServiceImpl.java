@@ -35,8 +35,8 @@ import java.util.Map;
  * 语言设置 服务实现类
  * </p>
  *
- * @author 聪明笨狗
- * @since 2020-05-25 10:17
+ * @author xieRW
+ * @since 2021-05-25 10:17
  */
 @Service
 public class QuServiceImpl extends ServiceImpl<QuMapper, Qu> implements QuService {
@@ -62,12 +62,12 @@ public class QuServiceImpl extends ServiceImpl<QuMapper, Qu> implements QuServic
     }
 
     @Override
-    public List<Qu> listByRandom(String repoId, Integer quType, Integer level, List<String> excludes, Integer size) {
+    public List<Qu> listByRandom(Long repoId, Integer quType, Integer level, List<Long> excludes, Integer size) {
         return baseMapper.listByRandom(repoId, quType, level, excludes, size);
     }
 
     @Override
-    public QuDetailDTO detail(String id) {
+    public QuDetailDTO detail(Long id) {
 
         QuDetailDTO respDTO = new QuDetailDTO();
         Qu qu = this.getById(id);
@@ -76,7 +76,7 @@ public class QuServiceImpl extends ServiceImpl<QuMapper, Qu> implements QuServic
         List<QuAnswerDTO> answerList = quAnswerService.listByQu(id);
         respDTO.setAnswerList(answerList);
 
-        List<String> repoIds = quRepoService.listByQu(id);
+        List<Long> repoIds = quRepoService.listByQu(id);
         respDTO.setRepoIds(repoIds);
 
         return respDTO;
@@ -196,7 +196,6 @@ public class QuServiceImpl extends ServiceImpl<QuMapper, Qu> implements QuServic
             a.setIsRight(item.getAIsRight().equals("1"));
             a.setContent(item.getAContent());
             a.setAnalysis(item.getAAnalysis());
-            a.setId("");
             list.add(a);
         }
         return list;

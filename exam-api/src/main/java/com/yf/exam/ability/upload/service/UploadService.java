@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * 阿里云OSS业务类
  * @author bool 
- * @date 2019-07-12 16:45
+ * @date 2021-07-12 16:45
  */
 public interface UploadService {
 

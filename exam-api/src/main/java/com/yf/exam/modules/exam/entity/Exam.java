@@ -6,6 +6,8 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import lombok.Data;
+
+
 import java.util.Date;
 
 /**
@@ -13,8 +15,8 @@ import java.util.Date;
 * 考试实体类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-07-25 16:18
+* @author xieRW
+* @since 2021-07-25 16:18
 */
 @Data
 @TableName("el_exam")
@@ -25,8 +27,8 @@ public class Exam extends Model<Exam> {
     /**
      * ID
      */
-    @TableId(value = "id", type = IdType.ASSIGN_ID)
-    private String id;
+    @TableId(value = "id", type = IdType.AUTO)
+    private Long id;
 
     /**
      * 考试名称

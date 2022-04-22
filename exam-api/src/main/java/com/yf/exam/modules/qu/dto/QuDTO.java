@@ -5,6 +5,7 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 import java.io.Serializable;
+
 import java.util.Date;
 
 /**
@@ -12,8 +13,8 @@ import java.util.Date;
 * 问题题目请求类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-05-25 13:23
+* @author xieRW
+* @since 2021-05-25 13:23
 */
 @Data
 @ApiModel(value="问题题目", description="问题题目")
@@ -23,7 +24,7 @@ public class QuDTO implements Serializable {
 
 
     @ApiModelProperty(value = "题目ID", required=true)
-    private String id;
+    private Long id;
 
     @ApiModelProperty(value = "题目类型", required=true)
     private Integer quType;

@@ -17,14 +17,14 @@ import java.util.List;
 * 考试部门业务实现类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-09-03 17:24
+* @author xieRW
+* @since 2021-09-03 17:24
 */
 @Service
 public class ExamDepartServiceImpl extends ServiceImpl<ExamDepartMapper, ExamDepart> implements ExamDepartService {
 
     @Override
-    public void saveAll(String examId, List<String> departs) {
+    public void saveAll(Long examId, List<Long> departs) {
 
         // 先删除
         QueryWrapper<ExamDepart> wrapper = new QueryWrapper<>();
@@ -37,7 +37,7 @@ public class ExamDepartServiceImpl extends ServiceImpl<ExamDepartMapper, ExamDep
         }
         List<ExamDepart> list = new ArrayList<>();
 
-        for(String id: departs){
+        for(Long id: departs){
             ExamDepart depart = new ExamDepart();
             depart.setDepartId(id);
             depart.setExamId(examId);
@@ -48,12 +48,12 @@ public class ExamDepartServiceImpl extends ServiceImpl<ExamDepartMapper, ExamDep
     }
 
     @Override
-    public List<String> listByExam(String examId) {
+    public List<Long> listByExam(Long examId) {
         // 先删除
         QueryWrapper<ExamDepart> wrapper = new QueryWrapper<>();
         wrapper.lambda().eq(ExamDepart::getExamId, examId);
         List<ExamDepart> list = this.list(wrapper);
-        List<String> ids = new ArrayList<>();
+        List<Long> ids = new ArrayList<>();
         if(!CollectionUtils.isEmpty(list)){
             for(ExamDepart item: list){
                 ids.add(item.getDepartId());

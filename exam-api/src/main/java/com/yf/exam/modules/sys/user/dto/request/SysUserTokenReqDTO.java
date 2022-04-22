@@ -11,8 +11,8 @@ import java.io.Serializable;
 * 会话检查请求类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-04-13 16:57
+* @author xieRW
+* @since 2021-04-13 16:57
 */
 @Data
 @ApiModel(value="会话检查请求类", description="会话检查请求类")

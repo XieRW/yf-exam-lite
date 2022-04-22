@@ -7,13 +7,15 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import lombok.Data;
 
+
+
 /**
 * <p>
 * 考试题库实体类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-09-05 11:14
+* @author xieRW
+* @since 2021-09-05 11:14
 */
 @Data
 @TableName("el_exam_repo")
@@ -24,14 +26,14 @@ public class ExamRepo extends Model<ExamRepo> {
     /**
     * ID
     */
-    @TableId(value = "id", type = IdType.ASSIGN_ID)
-    private String id;
+    @TableId(value = "id", type = IdType.AUTO)
+    private Long id;
     
     /**
     * 考试ID
     */
     @TableField("exam_id")
-    private String examId;
+    private Long examId;
     
     /**
     * 题库ID

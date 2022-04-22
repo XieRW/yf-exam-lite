@@ -16,8 +16,8 @@ import java.util.List;
 * 问题题目业务类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-05-25 13:23
+* @author xieRW
+* @since 2021-05-25 13:23
 */
 public interface QuService extends IService<Qu> {
 
@@ -37,10 +37,10 @@ public interface QuService extends IService<Qu> {
      * @param size
      * @return
      */
-    List<Qu> listByRandom(String repoId,
+    List<Qu> listByRandom(Long repoId,
                           Integer quType,
                           Integer level,
-                          List<String> excludes,
+                          List<Long> excludes,
                           Integer size);
 
     /**
@@ -48,7 +48,7 @@ public interface QuService extends IService<Qu> {
      * @param id
      * @return
      */
-    QuDetailDTO detail(String id);
+    QuDetailDTO detail(Long id);
 
     /**
      * 保存试题

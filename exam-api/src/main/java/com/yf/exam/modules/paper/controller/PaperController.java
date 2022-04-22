@@ -34,8 +34,8 @@ import org.springframework.web.bind.annotation.RestController;
 * 试卷控制器
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-05-25 16:33
+* @author xieRW
+* @since 2021-05-25 16:33
 */
 @Api(tags={"试卷"})
 @RestController
@@ -115,7 +115,7 @@ public class PaperController extends BaseController {
     @RequestMapping(value = "/create-paper", method = { RequestMethod.POST})
     public ApiRest<BaseIdRespDTO> save(@RequestBody PaperCreateReqDTO reqDTO) {
         //复制参数
-        String paperId = baseService.createPaper(UserUtils.getUserId(), reqDTO.getExamId());
+        Long paperId = baseService.createPaper(UserUtils.getUserId(), reqDTO.getExamId());
         return super.success(new BaseIdRespDTO(paperId));
     }
 

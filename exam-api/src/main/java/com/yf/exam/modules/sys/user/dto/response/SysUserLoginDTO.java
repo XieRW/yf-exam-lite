@@ -5,6 +5,7 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 import java.io.Serializable;
+
 import java.util.Date;
 import java.util.List;
 
@@ -13,8 +14,8 @@ import java.util.List;
 * 管理用户请求类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-04-13 16:57
+* @author xieRW
+* @since 2021-04-13 16:57
 */
 @Data
 @ApiModel(value="管理用户登录响应类", description="管理用户登录响应类")
@@ -23,7 +24,7 @@ public class SysUserLoginDTO implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @ApiModelProperty(value = "ID", required=true)
-    private String id;
+    private Long id;
 
     @ApiModelProperty(value = "用户名", required=true)
     private String userName;
@@ -35,7 +36,7 @@ public class SysUserLoginDTO implements Serializable {
     private String roleIds;
 
     @ApiModelProperty(value = "部门ID", required=true)
-    private String departId;
+    private Long departId;
 
     @ApiModelProperty(value = "创建时间", required=true)
     private Date createTime;

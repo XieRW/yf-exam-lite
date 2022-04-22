@@ -1,5 +1,5 @@
 /**
- * Copyright &copy; 2015-2020 <a href="http://www.jeeplus.org/">JeePlus</a> All rights reserved.
+ * Copyright &copy; 2015-2021 <a href="http://www.jeeplus.org/">JeePlus</a> All rights reserved.
  */
 package com.yf.exam.core.utils.excel.annotation;
 
@@ -11,7 +11,7 @@ import java.lang.annotation.Target;
 /**
  * Excel注解定义
  * @author jeeplus
- * @version 2016-03-10
+ * @version 2021-03-10
  */
 @Target({ElementType.METHOD, ElementType.FIELD, ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)

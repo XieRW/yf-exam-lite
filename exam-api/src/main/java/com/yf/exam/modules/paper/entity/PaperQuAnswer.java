@@ -7,13 +7,15 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import lombok.Data;
 
+
+
 /**
 * <p>
 * 试卷考题备选答案实体类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-05-25 17:31
+* @author xieRW
+* @since 2021-05-25 17:31
 */
 @Data
 @TableName("el_paper_qu_answer")
@@ -23,26 +25,26 @@ public class PaperQuAnswer extends Model<PaperQuAnswer> {
     /**
      * 自增ID
      */
-    @TableId(value = "id", type = IdType.ASSIGN_ID)
-    private String id;
+    @TableId(value = "id", type = IdType.AUTO)
+    private Long id;
 
     /**
      * 试卷ID
      */
     @TableField("paper_id")
-    private String paperId;
+    private Long paperId;
 
     /**
      * 回答项ID
      */
     @TableField("answer_id")
-    private String answerId;
+    private Long answerId;
 
     /**
      * 题目ID
      */
     @TableField("qu_id")
-    private String quId;
+    private Long quId;
 
     /**
      * 是否正确项

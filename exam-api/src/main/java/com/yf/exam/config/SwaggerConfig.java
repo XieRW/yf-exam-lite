@@ -20,16 +20,15 @@ import java.util.Collections;
 
 /**
  * Swagger配置
+ *
  * @author bool
- * @date 2020/8/19 20:53
+ * @date 2021/8/19 20:53
  */
 @Configuration
 @EnableSwagger2
 @EnableSwaggerBootstrapUI
 @ConfigurationProperties(prefix = "swagger")
 public class SwaggerConfig {
-
-
     @Bean
     public Docket examApi() {
         return new Docket(DocumentationType.SWAGGER_2)
@@ -42,8 +41,6 @@ public class SwaggerConfig {
                 .securitySchemes(Collections.singletonList(securityScheme()));
     }
 
-
-
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder().title("考试系统接口")
                 .description("考试系统接口")
@@ -52,14 +49,13 @@ public class SwaggerConfig {
                 .build();
     }
 
-
     /**
      * 授权头部
+     *
      * @return
      */
     @Bean
     SecurityScheme securityScheme() {
         return new ApiKey("token", "token", "header");
     }
-
 }

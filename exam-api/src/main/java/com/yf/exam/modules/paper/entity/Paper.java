@@ -7,6 +7,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import lombok.Data;
 
+
 import java.util.Date;
 
 /**
@@ -14,8 +15,8 @@ import java.util.Date;
 * 试卷实体类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-05-25 17:31
+* @author xieRW
+* @since 2021-05-25 17:31
 */
 @Data
 @TableName("el_paper")
@@ -26,26 +27,26 @@ public class Paper extends Model<Paper> {
     /**
      * 试卷ID
      */
-    @TableId(value = "id", type = IdType.ASSIGN_ID)
-    private String id;
+    @TableId(value = "id", type = IdType.AUTO)
+    private Long id;
 
     /**
      * 用户ID
      */
     @TableField("user_id")
-    private String userId;
+    private Long userId;
 
     /**
      * 部门ID
      */
     @TableField("depart_id")
-    private String departId;
+    private Long departId;
 
     /**
      * 规则ID
      */
     @TableField("exam_id")
-    private String examId;
+    private Long examId;
 
     /**
      * 考试标题

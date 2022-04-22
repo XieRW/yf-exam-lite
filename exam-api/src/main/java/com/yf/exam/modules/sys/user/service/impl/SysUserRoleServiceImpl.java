@@ -23,8 +23,8 @@ import java.util.List;
 * 语言设置 服务实现类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-04-13 16:57
+* @author xieRW
+* @since 2021-04-13 16:57
 */
 @Service
 public class SysUserRoleServiceImpl extends ServiceImpl<SysUserRoleMapper, SysUserRole> implements SysUserRoleService {
@@ -46,7 +46,7 @@ public class SysUserRoleServiceImpl extends ServiceImpl<SysUserRoleMapper, SysUs
      }
 
     @Override
-    public List<String> listRoles(String userId) {
+    public List<String> listRoles(Long userId) {
 
         QueryWrapper<SysUserRole> wrapper = new QueryWrapper<>();
         wrapper.lambda().eq(SysUserRole::getUserId, userId);
@@ -55,7 +55,7 @@ public class SysUserRoleServiceImpl extends ServiceImpl<SysUserRoleMapper, SysUs
         List<String> roles = new ArrayList<>();
         if(!CollectionUtils.isEmpty(list)){
             for(SysUserRole item: list){
-                roles.add(item.getRoleId());
+                roles.add(item.getRoleId().toString());
             }
         }
 
@@ -63,7 +63,7 @@ public class SysUserRoleServiceImpl extends ServiceImpl<SysUserRoleMapper, SysUs
     }
 
     @Override
-    public String saveRoles(String userId, List<String> ids) {
+    public String saveRoles(Long userId, List<String> ids) {
 
         // 删除全部角色
         QueryWrapper<SysUserRole> wrapper = new QueryWrapper<>();
@@ -82,7 +82,7 @@ public class SysUserRoleServiceImpl extends ServiceImpl<SysUserRoleMapper, SysUs
                 role.setUserId(userId);
                 list.add(role);
                 if(StringUtils.isEmpty(roleIds)){
-                    roleIds = item;
+                    roleIds = item.toString();
                 }else{
                     roleIds+=","+item;
                 }
@@ -96,7 +96,7 @@ public class SysUserRoleServiceImpl extends ServiceImpl<SysUserRoleMapper, SysUs
     }
 
     @Override
-    public boolean isStudent(String userId) {
+    public boolean isStudent(Long userId) {
 
         // 学生角色
         QueryWrapper<SysUserRole> wrapper = new QueryWrapper<>();
@@ -107,7 +107,7 @@ public class SysUserRoleServiceImpl extends ServiceImpl<SysUserRoleMapper, SysUs
     }
 
     @Override
-    public boolean isTeacher(String userId) {
+    public boolean isTeacher(Long userId) {
         // 学生角色
         QueryWrapper<SysUserRole> wrapper = new QueryWrapper<>();
         wrapper.lambda().eq(SysUserRole::getUserId, userId)
@@ -117,7 +117,7 @@ public class SysUserRoleServiceImpl extends ServiceImpl<SysUserRoleMapper, SysUs
     }
 
     @Override
-    public boolean isAdmin(String userId) {
+    public boolean isAdmin(Long userId) {
         // 学生角色
         QueryWrapper<SysUserRole> wrapper = new QueryWrapper<>();
         wrapper.lambda().eq(SysUserRole::getUserId, userId)

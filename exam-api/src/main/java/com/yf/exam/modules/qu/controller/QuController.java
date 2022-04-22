@@ -36,6 +36,7 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -43,8 +44,8 @@ import java.util.List;
 * 问题题目控制器
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-05-25 13:25
+* @author xieRW
+* @since 2021-05-25 13:25
 */
 @Api(tags={"问题题目"})
 @RestController
@@ -147,7 +148,7 @@ public class QuController extends BaseController {
         try {
 
             int no = 0;
-            String quId = "";
+            Long quId = 0L;
             List<QuExportDTO> list = baseService.listForExport(reqDTO);
             for (QuExportDTO item : list) {
                 if (!quId.equals(item.getQId())) {
@@ -297,7 +298,7 @@ public class QuController extends BaseController {
             l1.setQImage("题目图片，完整URL，多个用逗号隔开，限制10个");
             l1.setQVideo("题目视频，完整URL，只限一个");
             l1.setAImage("答案图片，完整URL，只限一个");
-            l1.setRepoList(Arrays.asList(new String[]{"已存在题库的ID，多个用逗号隔开，题库ID错误无法导入"}));
+            l1.setRepoList(Collections.singletonList(0L));
             l1.setAContent("候选答案1");
             l1.setAIsRight("只能填写0或1，0表示否，1表示是");
             l1.setAAnalysis("这个项是正确的");

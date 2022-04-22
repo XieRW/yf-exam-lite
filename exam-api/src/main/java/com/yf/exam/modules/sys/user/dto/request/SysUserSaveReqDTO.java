@@ -5,6 +5,7 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 import java.io.Serializable;
+
 import java.util.List;
 
 /**
@@ -12,15 +13,15 @@ import java.util.List;
 * 管理员登录请求类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-04-13 16:57
+* @author xieRW
+* @since 2021-04-13 16:57
 */
 @Data
 @ApiModel(value="管理员保存请求类", description="管理员保存请求类")
 public class SysUserSaveReqDTO implements Serializable {
 
     @ApiModelProperty(value = "ID", required=true)
-    private String id;
+    private Long id;
 
     @ApiModelProperty(value = "用户名", required=true)
     private String userName;
@@ -35,7 +36,7 @@ public class SysUserSaveReqDTO implements Serializable {
     private String password;
 
     @ApiModelProperty(value = "部门", required=true)
-    private String departId;
+    private Long departId;
 
     @ApiModelProperty(value = "角色列表", required=true)
     private List<String> roles;

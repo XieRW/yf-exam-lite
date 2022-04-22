@@ -19,8 +19,8 @@ import java.util.Date;
 * 考试记录业务实现类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-09-21 15:13
+* @author xieRW
+* @since 2021-09-21 15:13
 */
 @Service
 public class UserExamServiceImpl extends ServiceImpl<UserExamMapper, UserExam> implements UserExamService {
@@ -52,7 +52,7 @@ public class UserExamServiceImpl extends ServiceImpl<UserExamMapper, UserExam> i
     }
 
     @Override
-    public void joinResult(String userId, String examId, Integer score, boolean passed) {
+    public void joinResult(Long userId, Long examId, Integer score, boolean passed) {
 
         //查询条件
         QueryWrapper<UserExam> wrapper = new QueryWrapper<>();

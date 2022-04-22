@@ -23,8 +23,8 @@ import java.util.List;
 * 语言设置 服务实现类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-05-25 13:23
+* @author xieRW
+* @since 2021-05-25 13:23
 */
 @Service
 public class QuAnswerServiceImpl extends ServiceImpl<QuAnswerMapper, QuAnswer> implements QuAnswerService {
@@ -46,7 +46,7 @@ public class QuAnswerServiceImpl extends ServiceImpl<QuAnswerMapper, QuAnswer> i
      }
 
     @Override
-    public List<QuAnswer> listAnswerByRandom(String quId) {
+    public List<QuAnswer> listAnswerByRandom(Long quId) {
         QueryWrapper<QuAnswer> wrapper = new QueryWrapper<>();
         wrapper.lambda().eq(QuAnswer::getQuId, quId);
         wrapper.last(" ORDER BY RAND() ");
@@ -55,7 +55,7 @@ public class QuAnswerServiceImpl extends ServiceImpl<QuAnswerMapper, QuAnswer> i
     }
 
     @Override
-    public List<QuAnswerDTO> listByQu(String quId) {
+    public List<QuAnswerDTO> listByQu(Long quId) {
         QueryWrapper<QuAnswer> wrapper = new QueryWrapper<>();
         wrapper.lambda().eq(QuAnswer::getQuId, quId);
 
@@ -73,9 +73,9 @@ public class QuAnswerServiceImpl extends ServiceImpl<QuAnswerMapper, QuAnswer> i
      * @param quId
      * @return
      */
-    public List<String> findExistsList(String quId) {
+    public List<Long> findExistsList(Long quId) {
         //返回结果
-        List<String> ids = new ArrayList<>();
+        List<Long> ids = new ArrayList<>();
 
         QueryWrapper<QuAnswer> wrapper = new QueryWrapper();
         wrapper.lambda().eq(QuAnswer::getQuId, quId);
@@ -90,19 +90,19 @@ public class QuAnswerServiceImpl extends ServiceImpl<QuAnswerMapper, QuAnswer> i
     }
 
     @Override
-    public void saveAll(String quId, List<QuAnswerDTO> list) {
+    public void saveAll(Long quId, List<QuAnswerDTO> list) {
 
         //最终要保存的列表
         List<QuAnswer> saveList = new ArrayList<>();
 
         //已存在的标签列表
-        List<String> ids = this.findExistsList(quId);
+        List<Long> ids = this.findExistsList(quId);
 
         if(!CollectionUtils.isEmpty(list)){
             for(QuAnswerDTO item: list){
 
                 //标签ID
-                String id = item.getId();
+                Long id = item.getId();
                 QuAnswer answer = new QuAnswer();
                 BeanMapper.copy(item, answer);
                 answer.setQuId(quId);

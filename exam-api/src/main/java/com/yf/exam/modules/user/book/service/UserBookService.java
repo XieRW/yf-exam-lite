@@ -6,13 +6,15 @@ import com.yf.exam.core.api.dto.PagingReqDTO;
 import com.yf.exam.modules.user.book.dto.UserBookDTO;
 import com.yf.exam.modules.user.book.entity.UserBook;
 
+
+
 /**
 * <p>
 * 错题本业务类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-05-27 17:56
+* @author xieRW
+* @since 2021-05-27 17:56
 */
 public interface UserBookService extends IService<UserBook> {
 
@@ -28,7 +30,7 @@ public interface UserBookService extends IService<UserBook> {
      * @param quId
      * @param examId
      */
-    void addBook(String examId, String quId);
+    void addBook(Long examId, Long quId);
 
     /**
      * 查找第一个错题
@@ -36,5 +38,5 @@ public interface UserBookService extends IService<UserBook> {
      * @param examId
      * @return
      */
-    String findNext(String examId, String quId);
+    Long findNext(String examId, String quId);
 }

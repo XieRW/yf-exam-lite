@@ -14,8 +14,8 @@ import java.util.List;
 * 试题题库业务类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-05-25 13:23
+* @author xieRW
+* @since 2021-05-25 13:23
 */
 public interface QuRepoService extends IService<QuRepo> {
 
@@ -32,14 +32,14 @@ public interface QuRepoService extends IService<QuRepo> {
      * @param quType
      * @param ids
      */
-    void saveAll(String quId, Integer quType, List<String> ids);
+    void saveAll(Long quId, Integer quType, List<Long> ids);
 
     /**
      * 根据问题查找题库
      * @param quId
      * @return
      */
-    List<String> listByQu(String quId);
+    List<Long> listByQu(Long quId);
 
     /**
      * 根据题库查找题目ID列表
@@ -48,7 +48,7 @@ public interface QuRepoService extends IService<QuRepo> {
      * @param rand
      * @return
      */
-    List<String> listByRepo(String repoId, Integer quType, boolean rand);
+    List<Long> listByRepo(Long repoId, Integer quType, boolean rand);
 
     /**
      * 批量操作

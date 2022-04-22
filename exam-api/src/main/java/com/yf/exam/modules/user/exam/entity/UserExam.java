@@ -13,8 +13,8 @@ import java.util.Date;
 * 考试记录实体类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-09-21 15:13
+* @author xieRW
+* @since 2021-09-21 15:13
 */
 @Data
 @TableName("el_user_exam")
@@ -22,20 +22,20 @@ public class UserExam extends Model<UserExam> {
 
     private static final long serialVersionUID = 1L;
     
-    @TableId(value = "id", type = IdType.ASSIGN_ID)
-    private String id;
+    @TableId(value = "id", type = IdType.AUTO)
+    private Long id;
     
     /**
     * 用户ID
     */
     @TableField("user_id")
-    private String userId;
+    private Long userId;
     
     /**
     * 考试ID
     */
     @TableField("exam_id")
-    private String examId;
+    private Long examId;
     
     /**
     * 考试次数

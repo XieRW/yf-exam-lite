@@ -7,13 +7,15 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import lombok.Data;
 
+
+
 /**
 * <p>
 * 候选答案实体类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-05-25 13:23
+* @author xieRW
+* @since 2021-05-25 13:23
 */
 @Data
 @TableName("el_qu_answer")
@@ -25,13 +27,13 @@ public class QuAnswer extends Model<QuAnswer> {
      * 答案ID
      */
     @TableId(value = "id", type = IdType.ID_WORKER_STR)
-    private String id;
+    private Long id;
 
     /**
      * 问题ID
      */
     @TableField("qu_id")
-    private String quId;
+    private Long quId;
 
     /**
      * 是否正确

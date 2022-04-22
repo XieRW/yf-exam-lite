@@ -7,7 +7,7 @@ import org.apache.commons.lang3.RandomStringUtils;
 /**
  * 通用的密码处理类，用于生成密码和校验密码
  * ClassName: PassGenerator <br/>
- * date: 2017年12月13日 下午7:13:03 <br/>
+ * date: 2021年12月13日 下午7:13:03 <br/>
  *
  * @author Bool
  * @version

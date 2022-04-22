@@ -7,13 +7,15 @@ import com.yf.exam.modules.user.exam.dto.request.UserExamReqDTO;
 import com.yf.exam.modules.user.exam.dto.response.UserExamRespDTO;
 import com.yf.exam.modules.user.exam.entity.UserExam;
 
+
+
 /**
 * <p>
 * 考试记录业务类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-09-21 15:13
+* @author xieRW
+* @since 2021-09-21 15:13
 */
 public interface UserExamService extends IService<UserExam> {
 
@@ -39,5 +41,5 @@ public interface UserExamService extends IService<UserExam> {
      * @param score
      * @param passed
      */
-    void joinResult(String userId, String examId, Integer score, boolean passed);
+    void joinResult(Long userId, Long examId, Integer score, boolean passed);
 }

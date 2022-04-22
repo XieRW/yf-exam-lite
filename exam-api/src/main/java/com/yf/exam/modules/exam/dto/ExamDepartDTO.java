@@ -6,13 +6,14 @@ import lombok.Data;
 
 import java.io.Serializable;
 
+
 /**
 * <p>
 * 考试部门数据传输类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-09-03 17:24
+* @author xieRW
+* @since 2021-09-03 17:24
 */
 @Data
 @ApiModel(value="考试部门", description="考试部门")
@@ -22,10 +23,10 @@ public class ExamDepartDTO implements Serializable {
     
     
     @ApiModelProperty(value = "ID", required=true)
-    private String id;
+    private Long id;
     
     @ApiModelProperty(value = "考试ID", required=true)
-    private String examId;
+    private Long examId;
     
     @ApiModelProperty(value = "部门ID", required=true)
     private String departId;

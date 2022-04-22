@@ -32,8 +32,8 @@ import java.util.List;
 * 考试业务实现类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-07-25 16:18
+* @author xieRW
+* @since 2021-07-25 16:18
 */
 @Service
 public class ExamServiceImpl extends ServiceImpl<ExamMapper, Exam> implements ExamService {
@@ -49,10 +49,10 @@ public class ExamServiceImpl extends ServiceImpl<ExamMapper, Exam> implements Ex
     public void save(ExamSaveReqDTO reqDTO) {
 
         // ID
-        String id = reqDTO.getId();
+        Long id = reqDTO.getId();
 
-        if(StringUtils.isBlank(id)){
-            id = IdWorker.getIdStr();
+        if(StringUtils.isBlank(id.toString())){
+            id = IdWorker.getId();
         }
 
         //复制参数
@@ -64,7 +64,6 @@ public class ExamServiceImpl extends ServiceImpl<ExamMapper, Exam> implements Ex
 
         // 复制基本数据
         BeanMapper.copy(reqDTO, entity);
-        entity.setId(id);
 
         // 修复状态
         if (reqDTO.getTimeLimit()!=null
@@ -97,13 +96,13 @@ public class ExamServiceImpl extends ServiceImpl<ExamMapper, Exam> implements Ex
     }
 
     @Override
-    public ExamSaveReqDTO findDetail(String id) {
+    public ExamSaveReqDTO findDetail(Long id) {
         ExamSaveReqDTO respDTO = new ExamSaveReqDTO();
         Exam exam = this.getById(id);
         BeanMapper.copy(exam, respDTO);
 
         // 考试部门
-        List<String> departIds = examDepartService.listByExam(id);
+        List<Long> departIds = examDepartService.listByExam(id);
         respDTO.setDepartIds(departIds);
 
         // 题库
@@ -114,7 +113,7 @@ public class ExamServiceImpl extends ServiceImpl<ExamMapper, Exam> implements Ex
     }
 
     @Override
-    public ExamDTO findById(String id) {
+    public ExamDTO findById(Long id) {
         ExamDTO respDTO = new ExamDTO();
         Exam exam = this.getById(id);
         BeanMapper.copy(exam, respDTO);

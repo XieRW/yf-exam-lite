@@ -38,8 +38,8 @@ import java.util.List;
 * 语言设置 服务实现类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-04-13 16:57
+* @author xieRW
+* @since 2021-04-13 16:57
 */
 @Service
 public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> implements SysUserService {
@@ -164,11 +164,6 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
         SysUser user = new SysUser();
         BeanMapper.copy(reqDTO, user);
 
-        // 添加模式
-        if(StringUtils.isBlank(user.getId())){
-            user.setId(IdWorker.getIdStr());
-        }
-
         // 修改密码
         if(!StringUtils.isBlank(reqDTO.getPassword())){
             PassInfo pass = PassHandler.buildPassword(reqDTO.getPassword());
@@ -195,10 +190,8 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
             throw new ServiceException(1, "用户名已存在，换一个吧！");
         }
 
-
         // 保存用户
         SysUser user = new SysUser();
-        user.setId(IdWorker.getIdStr());
         user.setUserName(reqDTO.getUserName());
         user.setRealName(reqDTO.getRealName());
         PassInfo passInfo = PassHandler.buildPassword(reqDTO.getPassword());

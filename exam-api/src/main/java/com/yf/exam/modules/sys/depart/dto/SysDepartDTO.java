@@ -6,13 +6,14 @@ import lombok.Data;
 
 import java.io.Serializable;
 
+
 /**
 * <p>
 * 部门信息数据传输类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-09-02 17:25
+* @author xieRW
+* @since 2021-09-02 17:25
 */
 @Data
 @ApiModel(value="部门信息", description="部门信息")
@@ -22,13 +23,13 @@ public class SysDepartDTO implements Serializable {
     
     
     @ApiModelProperty(value = "ID", required=true)
-    private String id;
+    private Long id;
     
     @ApiModelProperty(value = "1公司2部门", required=true)
     private Integer deptType;
     
     @ApiModelProperty(value = "所属上级", required=true)
-    private String parentId;
+    private Long parentId;
     
     @ApiModelProperty(value = "部门名称", required=true)
     private String deptName;

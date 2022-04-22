@@ -13,8 +13,8 @@ import java.util.List;
 * 问题题目请求类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-05-25 13:23
+* @author xieRW
+* @since 2021-05-25 13:23
 */
 @Data
 @ApiModel(value="问题题目详情", description="问题题目详情")
@@ -27,7 +27,7 @@ public class QuDetailDTO extends QuDTO {
     private List<QuAnswerDTO> answerList;
 
     @ApiModelProperty(value = "题库列表", required=true)
-    private List<String> repoIds;
+    private List<Long> repoIds;
 
     
 }

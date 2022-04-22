@@ -1,5 +1,5 @@
 /**
- * Copyright &copy; 2015-2020 <a href="http://www.jeeplus.org/">JeePlus</a> All rights reserved.
+ * Copyright &copy; 2015-2021 <a href="http://www.jeeplus.org/">JeePlus</a> All rights reserved.
  */
 package com.yf.exam.core.utils.excel;
 
@@ -39,7 +39,7 @@ import java.util.Map;
 /**
  * 导出Excel文件（导出“XLSX”格式，支持大数据量导出   @see org.apache.poi.ss.SpreadsheetVersion）
  * @author jeeplus
- * @version 2016-04-21
+ * @version 2021-04-21
  */
 public class ExportExcel {
 	

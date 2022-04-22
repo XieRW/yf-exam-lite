@@ -10,8 +10,8 @@ import java.util.List;
 * 考试部门业务类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-09-03 17:24
+* @author xieRW
+* @since 2021-09-03 17:24
 */
 public interface ExamDepartService extends IService<ExamDepart> {
 
@@ -20,7 +20,7 @@ public interface ExamDepartService extends IService<ExamDepart> {
      * @param examId
      * @param departs
      */
-    void saveAll(String examId, List<String> departs);
+    void saveAll(Long examId, List<Long> departs);
 
 
     /**
@@ -28,5 +28,5 @@ public interface ExamDepartService extends IService<ExamDepart> {
      * @param examId
      * @return
      */
-    List<String> listByExam(String examId);
+    List<Long> listByExam(Long examId);
 }

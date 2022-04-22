@@ -12,8 +12,8 @@ import java.util.List;
 * 试卷考题备选答案Mapper
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-05-25 16:33
+* @author xieRW
+* @since 2021-05-25 16:33
 */
 public interface PaperQuAnswerMapper extends BaseMapper<PaperQuAnswer> {
 
@@ -23,5 +23,5 @@ public interface PaperQuAnswerMapper extends BaseMapper<PaperQuAnswer> {
      * @param quId
      * @return
      */
-    List<PaperQuAnswerExtDTO> list(@Param("paperId") String paperId, @Param("quId") String quId);
+    List<PaperQuAnswerExtDTO> list(@Param("paperId") Long paperId, @Param("quId") Long quId);
 }

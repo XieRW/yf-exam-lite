@@ -30,8 +30,8 @@ import javax.servlet.http.HttpServletRequest;
  * 管理用户控制器
  * </p>
  *
- * @author 聪明笨狗
- * @since 2020-04-13 16:57
+ * @author xieRW
+ * @since 2021-04-13 16:57
  */
 @Api(tags = {"管理用户"})
 @RestController

@@ -7,6 +7,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import lombok.Data;
 
+
 import java.util.Date;
 
 /**
@@ -14,8 +15,8 @@ import java.util.Date;
 * 题库实体类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-05-25 13:23
+* @author xieRW
+* @since 2021-05-25 13:23
 */
 @Data
 @TableName("el_repo")
@@ -26,8 +27,8 @@ public class Repo extends Model<Repo> {
     /**
      * 题库ID
      */
-    @TableId(value = "id", type = IdType.ASSIGN_ID)
-    private String id;
+    @TableId(value = "id", type = IdType.AUTO)
+    private Long id;
 
     /**
      * 题库编号

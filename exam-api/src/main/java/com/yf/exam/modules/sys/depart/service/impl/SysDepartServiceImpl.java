@@ -25,8 +25,8 @@ import java.util.Map;
 * 部门信息业务实现类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-09-02 17:25
+* @author xieRW
+* @since 2021-09-02 17:25
 */
 @Service
 public class SysDepartServiceImpl extends ServiceImpl<SysDepartMapper, SysDepart> implements SysDepartService {
@@ -35,13 +35,13 @@ public class SysDepartServiceImpl extends ServiceImpl<SysDepartMapper, SysDepart
     /**
      * 0标识为顶级分类
      */
-    private static final String ROOT_TAG = "0";
+    private static final Long ROOT_TAG = 0L;
 
 
     @Override
     public void save(SysDepartDTO reqDTO) {
 
-        if(StringUtils.isBlank(reqDTO.getId())) {
+        if(StringUtils.isBlank(reqDTO.getId().toString())) {
             this.fillCode(reqDTO);
         }else{
             reqDTO.setSort(null);
@@ -75,7 +75,7 @@ public class SysDepartServiceImpl extends ServiceImpl<SysDepartMapper, SysDepart
     }
 
     @Override
-    public List<SysDepartTreeDTO> findTree(List<String> ids) {
+    public List<SysDepartTreeDTO> findTree(List<Long> ids) {
 
 
         QueryWrapper<SysDepart> wrapper = new QueryWrapper();
@@ -83,8 +83,8 @@ public class SysDepartServiceImpl extends ServiceImpl<SysDepartMapper, SysDepart
 
         if(!CollectionUtils.isEmpty(ids)){
 
-            List<String> fullIds = new ArrayList<>();
-            for(String id: ids){
+            List<Long> fullIds = new ArrayList<>();
+            for(Long id: ids){
                 this.cycleAllParent(fullIds, id);
             }
 
@@ -98,7 +98,7 @@ public class SysDepartServiceImpl extends ServiceImpl<SysDepartMapper, SysDepart
         List<SysDepartTreeDTO> dtoList = BeanMapper.mapList(list, SysDepartTreeDTO.class);
 
         //子结构的列表
-        Map<String,List<SysDepartTreeDTO>> map = new HashMap<>(16);
+        Map<Long,List<SysDepartTreeDTO>> map = new HashMap<>(16);
 
         for(SysDepartTreeDTO item: dtoList){
 
@@ -126,7 +126,7 @@ public class SysDepartServiceImpl extends ServiceImpl<SysDepartMapper, SysDepart
     }
 
     @Override
-    public void sort(String id, Integer sort) {
+    public void sort(Long id, Integer sort) {
 
         SysDepart depart = this.getById(id);
         SysDepart exchange = null;
@@ -178,7 +178,7 @@ public class SysDepartServiceImpl extends ServiceImpl<SysDepartMapper, SysDepart
         // 前缀
         String code = "";
 
-        if(StringUtils.isNotBlank(reqDTO.getParentId())
+        if(StringUtils.isNotBlank(reqDTO.getParentId().toString())
                 && !ROOT_TAG.equals(reqDTO.getParentId())){
             SysDepart parent = this.getById(reqDTO.getParentId());
             code = parent.getDeptCode();
@@ -221,7 +221,7 @@ public class SysDepartServiceImpl extends ServiceImpl<SysDepartMapper, SysDepart
      * @param map
      * @param item
      */
-    private void fillChildren(Map<String,List<SysDepartTreeDTO>> map, SysDepartTreeDTO item){
+    private void fillChildren(Map<Long,List<SysDepartTreeDTO>> map, SysDepartTreeDTO item){
 
         //设置子类
         if(map.containsKey(item.getId())){
@@ -238,9 +238,9 @@ public class SysDepartServiceImpl extends ServiceImpl<SysDepartMapper, SysDepart
 
 
     @Override
-    public List<String> listAllSubIds( String id){
+    public List<Long> listAllSubIds(Long id){
 
-        List<String> ids = new ArrayList<>();
+        List<Long> ids = new ArrayList<>();
         this.cycleAllSubs(ids, id);
         return ids;
     }
@@ -251,7 +251,7 @@ public class SysDepartServiceImpl extends ServiceImpl<SysDepartMapper, SysDepart
      * @param list
      * @param id
      */
-    private void cycleAllSubs(List<String> list, String id){
+    private void cycleAllSubs(List<Long> list, Long id){
 
         // 添加ID
         list.add(id);
@@ -273,13 +273,13 @@ public class SysDepartServiceImpl extends ServiceImpl<SysDepartMapper, SysDepart
      * @param list
      * @param id
      */
-    private void cycleAllParent(List<String> list, String id){
+    private void cycleAllParent(List<Long> list, Long id){
 
         // 往上递归获得父类
         list.add(id);
         SysDepart depart = this.getById(id);
 
-        if(StringUtils.isNotBlank(depart.getParentId())
+        if(StringUtils.isNotBlank(depart.getParentId().toString())
                 && !ROOT_TAG.equals(depart.getParentId())){
             this.cycleAllParent(list, depart.getParentId());
         }

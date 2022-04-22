@@ -8,8 +8,8 @@ import com.yf.exam.modules.qu.entity.QuRepo;
 * 试题题库Mapper
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-05-25 13:23
+* @author xieRW
+* @since 2021-05-25 13:23
 */
 public interface QuRepoMapper extends BaseMapper<QuRepo> {
 

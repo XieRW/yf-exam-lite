@@ -7,13 +7,15 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import lombok.Data;
 
+
+
 /**
 * <p>
 * 试卷考题实体类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-05-25 17:31
+* @author xieRW
+* @since 2021-05-25 17:31
 */
 @Data
 @TableName("el_paper_qu")
@@ -24,20 +26,20 @@ public class PaperQu extends Model<PaperQu> {
     /**
      * ID
      */
-    @TableId(value = "id", type = IdType.ASSIGN_ID)
-    private String id;
+    @TableId(value = "id", type = IdType.AUTO)
+    private Long id;
 
     /**
      * 试卷ID
      */
     @TableField("paper_id")
-    private String paperId;
+    private Long paperId;
 
     /**
      * 题目ID
      */
     @TableField("qu_id")
-    private String quId;
+    private Long quId;
 
     /**
      * 题目类型

@@ -18,13 +18,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
+
+
 /**
 * <p>
 * 语言设置 服务实现类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-05-27 17:56
+* @author xieRW
+* @since 2021-05-27 17:56
 */
 @Service
 public class UserBookServiceImpl extends ServiceImpl<UserBookMapper, UserBook> implements UserBookService {
@@ -64,7 +66,7 @@ public class UserBookServiceImpl extends ServiceImpl<UserBookMapper, UserBook> i
 
 
     @Override
-    public void addBook(String examId, String quId) {
+    public void addBook(Long examId, Long quId) {
 
         QueryWrapper<UserBook> wrapper = new QueryWrapper<>();
         wrapper.lambda()
@@ -97,7 +99,7 @@ public class UserBookServiceImpl extends ServiceImpl<UserBookMapper, UserBook> i
     }
 
     @Override
-    public String findNext(String examId, String quId) {
+    public Long findNext(String examId, String quId) {
 
 
         Integer sort = 999999;
@@ -136,7 +138,7 @@ public class UserBookServiceImpl extends ServiceImpl<UserBookMapper, UserBook> i
      * @param userId
      * @return
      */
-    private Integer findMaxSort(String examId, String userId){
+    private Integer findMaxSort(Long examId, Long userId){
 
         QueryWrapper<UserBook> wrapper = new QueryWrapper<>();
         wrapper.lambda()

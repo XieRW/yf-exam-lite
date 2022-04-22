@@ -5,6 +5,7 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 import java.io.Serializable;
+
 import java.util.Date;
 
 /**
@@ -12,8 +13,8 @@ import java.util.Date;
 * 错题本请求类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-05-27 17:56
+* @author xieRW
+* @since 2021-05-27 17:56
 */
 @Data
 @ApiModel(value="错题本", description="错题本")
@@ -23,7 +24,7 @@ public class UserBookDTO implements Serializable {
 
 
     @ApiModelProperty(value = "ID", required=true)
-    private String id;
+    private Long id;
 
     @ApiModelProperty(value = "考试ID", required=true)
     private String examId;

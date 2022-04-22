@@ -14,8 +14,8 @@ import com.yf.exam.modules.exam.entity.Exam;
 * 考试业务类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-07-25 16:18
+* @author xieRW
+* @since 2021-07-25 16:18
 */
 public interface ExamService extends IService<Exam> {
 
@@ -30,14 +30,14 @@ public interface ExamService extends IService<Exam> {
      * @param id
      * @return
      */
-    ExamSaveReqDTO findDetail(String id);
+    ExamSaveReqDTO findDetail(Long id);
 
     /**
      * 查找考试详情--简要信息
      * @param id
      * @return
      */
-    ExamDTO findById(String id);
+    ExamDTO findById(Long id);
 
     /**
     * 分页查询数据

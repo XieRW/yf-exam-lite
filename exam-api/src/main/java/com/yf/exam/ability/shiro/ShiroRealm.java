@@ -53,7 +53,7 @@ public class ShiroRealm extends AuthorizingRealm {
 	@Override
 	protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
 
-		String userId = null;
+		Long userId = null;
 		if (principals != null) {
 			SysUserLoginDTO user = (SysUserLoginDTO) principals.getPrimaryPrincipal();
 			userId = user.getId();

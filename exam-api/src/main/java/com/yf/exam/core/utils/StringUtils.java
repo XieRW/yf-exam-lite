@@ -5,7 +5,7 @@ import java.util.Map;
 /**
  * 字符串常用工具类
  * @author bool 
- * @date 2019-05-15 11:40
+ * @date 2021-05-15 11:40
  */
 public class StringUtils {
 

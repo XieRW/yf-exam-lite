@@ -13,8 +13,8 @@ import java.util.List;
 * 候选答案业务类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-05-25 13:23
+* @author xieRW
+* @since 2021-05-25 13:23
 */
 public interface QuAnswerService extends IService<QuAnswer> {
 
@@ -30,19 +30,19 @@ public interface QuAnswerService extends IService<QuAnswer> {
      * @param quId
      * @return
      */
-    List<QuAnswer> listAnswerByRandom(String quId);
+    List<QuAnswer> listAnswerByRandom(Long quId);
 
     /**
      * 根据问题查找答案
      * @param quId
      * @return
      */
-    List<QuAnswerDTO> listByQu(String quId);
+    List<QuAnswerDTO> listByQu(Long quId);
 
     /**
      * 保存试题
      * @param quId
      * @param list
      */
-    void saveAll(String quId, List<QuAnswerDTO> list);
+    void saveAll(Long quId, List<QuAnswerDTO> list);
 }

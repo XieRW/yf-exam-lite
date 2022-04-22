@@ -16,13 +16,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+
+
 /**
 * <p>
 * 错题本控制器
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-05-27 17:56
+* @author xieRW
+* @since 2021-05-27 17:56
 */
 @Api(tags={"错题本"})
 @RestController
@@ -70,7 +72,7 @@ public class UserBookController extends BaseController {
     @RequestMapping(value = "/next", method = { RequestMethod.POST})
     public ApiRest<BaseIdRespDTO> nextQu(@RequestBody UserBookDTO reqDTO) {
         //转换并返回
-        String quId = baseService.findNext(reqDTO.getExamId(), reqDTO.getQuId());
+        Long quId = baseService.findNext(reqDTO.getExamId(), reqDTO.getQuId());
         return super.success(new BaseIdRespDTO(quId));
     }
 }

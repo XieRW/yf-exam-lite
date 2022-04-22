@@ -6,6 +6,7 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 import java.io.Serializable;
+
 import java.util.Date;
 
 /**
@@ -13,8 +14,8 @@ import java.util.Date;
 * 试卷请求类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-05-25 17:31
+* @author xieRW
+* @since 2021-05-25 17:31
 */
 @Data
 @ApiModel(value="试卷", description="试卷")
@@ -24,7 +25,7 @@ public class PaperDTO implements Serializable {
 
 
     @ApiModelProperty(value = "试卷ID", required=true)
-    private String id;
+    private Long id;
 
     @Dict(dictTable = "sys_user", dicText = "real_name", dicCode = "id")
     @ApiModelProperty(value = "用户ID", required=true)

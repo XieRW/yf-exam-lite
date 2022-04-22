@@ -27,8 +27,8 @@ import java.util.List;
 * 语言设置 服务实现类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-05-25 13:23
+* @author xieRW
+* @since 2021-05-25 13:23
 */
 @Service
 public class QuRepoServiceImpl extends ServiceImpl<QuRepoMapper, QuRepo> implements QuRepoService {
@@ -57,7 +57,7 @@ public class QuRepoServiceImpl extends ServiceImpl<QuRepoMapper, QuRepo> impleme
      }
 
     @Override
-    public void saveAll(String quId, Integer quType, List<String> ids) {
+    public void saveAll(Long quId, Integer quType, List<Long> ids) {
         // 先删除
         QueryWrapper<QuRepo> wrapper = new QueryWrapper<>();
         wrapper.lambda().eq(QuRepo::getQuId, quId);
@@ -66,7 +66,7 @@ public class QuRepoServiceImpl extends ServiceImpl<QuRepoMapper, QuRepo> impleme
         // 保存全部
         if(!CollectionUtils.isEmpty(ids)){
             List<QuRepo> list = new ArrayList<>();
-            for(String id: ids){
+            for(Long id: ids){
                 QuRepo ref = new QuRepo();
                 ref.setQuId(quId);
                 ref.setRepoId(id);
@@ -76,7 +76,7 @@ public class QuRepoServiceImpl extends ServiceImpl<QuRepoMapper, QuRepo> impleme
             this.saveBatch(list);
 
 
-            for(String id: ids){
+            for(Long id: ids){
                 this.sortRepo(id);
             }
         }
@@ -85,12 +85,12 @@ public class QuRepoServiceImpl extends ServiceImpl<QuRepoMapper, QuRepo> impleme
     }
 
     @Override
-    public List<String> listByQu(String quId) {
+    public List<Long> listByQu(Long quId) {
         // 先删除
         QueryWrapper<QuRepo> wrapper = new QueryWrapper<>();
         wrapper.lambda().eq(QuRepo::getQuId, quId);
         List<QuRepo> list = this.list(wrapper);
-        List<String> ids = new ArrayList<>();
+        List<Long> ids = new ArrayList<>();
         if(!CollectionUtils.isEmpty(list)){
             for(QuRepo item: list){
                 ids.add(item.getRepoId());
@@ -100,7 +100,7 @@ public class QuRepoServiceImpl extends ServiceImpl<QuRepoMapper, QuRepo> impleme
     }
 
     @Override
-    public List<String> listByRepo(String repoId, Integer quType, boolean rand) {
+    public List<Long> listByRepo(Long repoId, Integer quType, boolean rand) {
         QueryWrapper<QuRepo> wrapper = new QueryWrapper<>();
         wrapper.lambda()
                 .eq(QuRepo::getRepoId, repoId);
@@ -116,7 +116,7 @@ public class QuRepoServiceImpl extends ServiceImpl<QuRepoMapper, QuRepo> impleme
         }
 
         List<QuRepo> list = this.list(wrapper);
-        List<String> ids = new ArrayList<>();
+        List<Long> ids = new ArrayList<>();
         if(!CollectionUtils.isEmpty(list)){
             for(QuRepo item: list){
                 ids.add(item.getQuId());
@@ -138,13 +138,13 @@ public class QuRepoServiceImpl extends ServiceImpl<QuRepoMapper, QuRepo> impleme
         }else{
 
             // 新增的
-            for(String quId : reqDTO.getQuIds()){
+            for(Long quId : reqDTO.getQuIds()){
                 Qu q = quMapper.selectById(quId);
                 this.saveAll(quId, q.getQuType(), reqDTO.getRepoIds());
             }
         }
 
-        for(String id: reqDTO.getRepoIds()){
+        for(Long id: reqDTO.getRepoIds()){
             this.sortRepo(id);
         }
 
@@ -155,7 +155,7 @@ public class QuRepoServiceImpl extends ServiceImpl<QuRepoMapper, QuRepo> impleme
      * 单个题库进行排序
      * @param repoId
      */
-    private void sortRepo(String repoId){
+    private void sortRepo(Long repoId){
 
         QueryWrapper<QuRepo> wrapper = new QueryWrapper<>();
         wrapper.lambda().eq(QuRepo::getRepoId, repoId);

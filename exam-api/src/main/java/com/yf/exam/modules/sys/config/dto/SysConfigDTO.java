@@ -6,13 +6,14 @@ import lombok.Data;
 
 import java.io.Serializable;
 
+
 /**
 * <p>
 * 通用配置请求类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-04-17 09:12
+* @author xieRW
+* @since 2021-04-17 09:12
 */
 @Data
 @ApiModel(value="通用配置", description="通用配置")
@@ -22,7 +23,7 @@ public class SysConfigDTO implements Serializable {
 
 
     @ApiModelProperty(value = "ID", required=true)
-    private String id;
+    private Long id;
 
     @ApiModelProperty(value = "系统名称")
     private String siteName;

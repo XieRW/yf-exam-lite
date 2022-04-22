@@ -7,13 +7,15 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import lombok.Data;
 
+
+
 /**
 * <p>
 * 试题题库实体类
 * </p>
 *
-* @author 聪明笨狗
-* @since 2020-05-25 13:23
+* @author xieRW
+* @since 2021-05-25 13:23
 */
 @Data
 @TableName("el_qu_repo")
@@ -22,19 +24,19 @@ public class QuRepo extends Model<QuRepo> {
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "id", type = IdType.ID_WORKER_STR)
-    private String id;
+    private Long id;
 
     /**
      * 试题
      */
     @TableField("qu_id")
-    private String quId;
+    private Long quId;
 
     /**
      * 归属题库
      */
     @TableField("repo_id")
-    private String repoId;
+    private Long repoId;
 
     /**
      * 题目类型
