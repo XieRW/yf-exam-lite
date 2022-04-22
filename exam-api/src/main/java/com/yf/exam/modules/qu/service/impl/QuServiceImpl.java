@@ -86,8 +86,6 @@ public class QuServiceImpl extends ServiceImpl<QuMapper, Qu> implements QuServic
     @Transactional(rollbackFor = Exception.class)
     @Override
     public void save(QuDetailDTO reqDTO) {
-
-
         // 校验数据
         this.checkData(reqDTO, "");
 

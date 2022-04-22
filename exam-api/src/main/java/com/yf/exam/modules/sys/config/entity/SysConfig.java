@@ -26,7 +26,7 @@ public class SysConfig extends Model<SysConfig> {
     /**
      * ID
      */
-    @TableId(value = "id", type = IdType.ID_WORKER_STR)
+    @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
     /**

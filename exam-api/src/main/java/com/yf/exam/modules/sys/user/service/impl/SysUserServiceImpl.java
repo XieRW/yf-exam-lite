@@ -170,7 +170,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
             user.setPassword(pass.getPassword());
             user.setSalt(pass.getSalt());
         }
-
+        this.saveOrUpdate(user);
         // 保存角色信息
         String roleIds = sysUserRoleService.saveRoles(user.getId(), roles);
         user.setRoleIds(roleIds);

@@ -126,7 +126,7 @@ export const asyncRoutes = [
     meta: {
       title: '在线考试',
       icon: 'list',
-      roles: ['student', 'sa']
+      roles: ['student', 'admin']
     },
     children: [
 
@@ -187,7 +187,7 @@ export const asyncRoutes = [
     meta: {
       title: '考试管理',
       icon: 'example',
-      roles: ['sa', 'teacher']
+      roles: ['admin', 'teacher']
     },
     children: [
 
@@ -284,7 +284,7 @@ export const asyncRoutes = [
     meta: {
       title: '系统设置',
       icon: 'configure',
-      roles: ['sa']
+      roles: ['admin']
     },
     children: [
       {

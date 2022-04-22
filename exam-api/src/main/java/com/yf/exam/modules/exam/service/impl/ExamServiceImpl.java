@@ -47,23 +47,15 @@ public class ExamServiceImpl extends ServiceImpl<ExamMapper, Exam> implements Ex
 
     @Override
     public void save(ExamSaveReqDTO reqDTO) {
-
-        // ID
-        Long id = reqDTO.getId();
-
-        if(StringUtils.isBlank(id.toString())){
-            id = IdWorker.getId();
-        }
-
         //复制参数
         Exam entity = new Exam();
-
         // 计算分值
         this.calcScore(reqDTO);
-
-
         // 复制基本数据
         BeanMapper.copy(reqDTO, entity);
+
+        this.saveOrUpdate(entity);
+        Long id = entity.getId();
 
         // 修复状态
         if (reqDTO.getTimeLimit()!=null
@@ -88,11 +80,6 @@ public class ExamServiceImpl extends ServiceImpl<ExamMapper, Exam> implements Ex
         if(OpenType.DEPT_OPEN.equals(reqDTO.getOpenType())){
             examDepartService.saveAll(id, reqDTO.getDepartIds());
         }
-
-
-
-        this.saveOrUpdate(entity);
-
     }
 
     @Override

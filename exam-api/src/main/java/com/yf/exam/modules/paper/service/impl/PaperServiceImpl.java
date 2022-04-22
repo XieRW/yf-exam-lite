@@ -216,10 +216,8 @@ public class PaperServiceImpl extends ServiceImpl<PaperMapper, Paper> implements
 
         //最终的题目列表
         List<PaperQu> quList = new ArrayList<>();
-
         //排除ID，避免题目重复
         List<Long> excludes = new ArrayList<>();
-
         if (!CollectionUtils.isEmpty(list)) {
             for (ExamRepoExtDTO item : list) {
 

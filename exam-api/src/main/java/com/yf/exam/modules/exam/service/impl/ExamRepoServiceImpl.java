@@ -43,7 +43,6 @@ public class ExamRepoServiceImpl extends ServiceImpl<ExamRepoMapper, ExamRepo> i
         List<ExamRepo> repos = BeanMapper.mapList(list, ExamRepo.class);
         for(ExamRepo item: repos){
             item.setExamId(examId);
-            item.setId(IdWorker.getId());
         }
 
         this.saveBatch(repos);

@@ -24,10 +24,10 @@ public class SysRole extends Model<SysRole> {
     private static final long serialVersionUID = 1L;
     
     /**
-    * 角色ID
+    * 角色ID编码
     */
     @TableId(value = "id", type = IdType.AUTO)
-    private Long id;
+    private String id;
     
     /**
     * 角色名称

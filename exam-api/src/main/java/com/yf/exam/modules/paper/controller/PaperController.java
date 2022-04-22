@@ -127,7 +127,6 @@ public class PaperController extends BaseController {
     @ApiOperation(value = "试卷详情")
     @RequestMapping(value = "/paper-detail", method = { RequestMethod.POST})
     public ApiRest<ExamDetailRespDTO> paperDetail(@RequestBody BaseIdReqDTO reqDTO) {
-        //根据ID删除
         ExamDetailRespDTO respDTO = baseService.paperDetail(reqDTO.getId());
         return super.success(respDTO);
     }

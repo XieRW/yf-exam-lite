@@ -39,7 +39,7 @@ public class ExamRepo extends Model<ExamRepo> {
     * 题库ID
     */
     @TableField("repo_id")
-    private String repoId;
+    private Long repoId;
     
     /**
     * 单选题数量
