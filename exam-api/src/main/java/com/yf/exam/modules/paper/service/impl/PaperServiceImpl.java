@@ -387,8 +387,6 @@ public class PaperServiceImpl extends ServiceImpl<PaperMapper, Paper> implements
 
     @Override
     public void fillAnswer(PaperAnswerDTO reqDTO) {
-
-
         // 未作答
         if(CollectionUtils.isEmpty(reqDTO.getAnswers())
                 && StringUtils.isBlank(reqDTO.getAnswer())){

@@ -21,18 +21,17 @@ public class PaperQuAnswerDTO implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-
     @ApiModelProperty(value = "自增ID", required=true)
     private Long id;
 
     @ApiModelProperty(value = "试卷ID", required=true)
-    private String paperId;
+    private Long paperId;
 
     @ApiModelProperty(value = "回答项ID", required=true)
-    private String answerId;
+    private Long answerId;
 
     @ApiModelProperty(value = "题目ID", required=true)
-    private String quId;
+    private Long quId;
 
     @ApiModelProperty(value = "是否正确项", required=true)
     private Boolean isRight;
@@ -45,5 +44,4 @@ public class PaperQuAnswerDTO implements Serializable {
 
     @ApiModelProperty(value = "选项标签", required=true)
     private String abc;
-    
 }

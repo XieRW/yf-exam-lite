@@ -24,6 +24,4 @@ public class PaperQuAnswerExtDTO extends PaperQuAnswerDTO {
 
     @ApiModelProperty(value = "答案内容", required=true)
     private String content;
-
-    
 }

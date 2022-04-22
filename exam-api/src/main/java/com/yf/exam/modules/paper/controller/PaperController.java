@@ -152,7 +152,6 @@ public class PaperController extends BaseController {
     @ApiOperation(value = "填充答案")
     @RequestMapping(value = "/fill-answer", method = { RequestMethod.POST})
     public ApiRest<PaperQuDetailDTO> fillAnswer(@RequestBody PaperAnswerDTO reqDTO) {
-        //根据ID删除
         baseService.fillAnswer(reqDTO);
         return super.success();
     }

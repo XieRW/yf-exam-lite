@@ -29,14 +29,14 @@ public class PaperDTO implements Serializable {
 
     @Dict(dictTable = "sys_user", dicText = "real_name", dicCode = "id")
     @ApiModelProperty(value = "用户ID", required=true)
-    private String userId;
+    private Long userId;
 
     @Dict(dictTable = "sys_depart", dicText = "dept_name", dicCode = "id")
     @ApiModelProperty(value = "部门ID", required=true)
-    private String departId;
+    private Long departId;
 
     @ApiModelProperty(value = "规则ID", required=true)
-    private String examId;
+    private Long examId;
 
     @ApiModelProperty(value = "考试标题", required=true)
     private String title;

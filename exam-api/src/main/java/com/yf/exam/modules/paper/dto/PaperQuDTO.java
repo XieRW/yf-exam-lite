@@ -25,7 +25,7 @@ public class PaperQuDTO implements Serializable {
     private Long id;
 
     @ApiModelProperty(value = "试卷ID", required=true)
-    private String paperId;
+    private Long paperId;
 
     @ApiModelProperty(value = "题目ID", required=true)
     private Long quId;

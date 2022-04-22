@@ -14,7 +14,7 @@ import java.util.List;
 public class PaperAnswerDTO extends PaperQuQueryDTO {
 
     @ApiModelProperty(value = "回答列表", required=true)
-    private List<String> answers;
+    private List<Long> answers;
 
     @ApiModelProperty(value = "主观答案", required=true)
     private String answer;
