@@ -18,7 +18,6 @@ import java.io.Serializable;
 @Data
 @ApiModel(value="试卷考题备选答案", description="试卷考题备选答案")
 public class PaperQuAnswerDTO implements Serializable {
-
     private static final long serialVersionUID = 1L;
 
     @ApiModelProperty(value = "自增ID", required=true)

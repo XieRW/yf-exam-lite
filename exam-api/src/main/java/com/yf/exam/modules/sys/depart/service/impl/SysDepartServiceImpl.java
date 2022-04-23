@@ -30,8 +30,6 @@ import java.util.Map;
 */
 @Service
 public class SysDepartServiceImpl extends ServiceImpl<SysDepartMapper, SysDepart> implements SysDepartService {
-
-
     /**
      * 0标识为顶级分类
      */
@@ -40,14 +38,12 @@ public class SysDepartServiceImpl extends ServiceImpl<SysDepartMapper, SysDepart
 
     @Override
     public void save(SysDepartDTO reqDTO) {
-
-        if(StringUtils.isBlank(reqDTO.getId().toString())) {
+        if(reqDTO.getId()==null || reqDTO.getId() ==0) {
             this.fillCode(reqDTO);
         }else{
             reqDTO.setSort(null);
             reqDTO.setDeptCode(null);
         }
-
         SysDepart entity = new SysDepart();
         BeanMapper.copy(reqDTO, entity);
         this.saveOrUpdate(entity);
@@ -55,7 +51,6 @@ public class SysDepartServiceImpl extends ServiceImpl<SysDepartMapper, SysDepart
 
     @Override
     public IPage<SysDepartTreeDTO> paging(PagingReqDTO<SysDepartDTO> reqDTO) {
-
         // 创建分页对象
         Page query = new Page(reqDTO.getCurrent(), reqDTO.getSize());
 
@@ -76,8 +71,6 @@ public class SysDepartServiceImpl extends ServiceImpl<SysDepartMapper, SysDepart
 
     @Override
     public List<SysDepartTreeDTO> findTree(List<Long> ids) {
-
-
         QueryWrapper<SysDepart> wrapper = new QueryWrapper();
         wrapper.lambda().orderByAsc(SysDepart::getSort);
 
@@ -127,7 +120,6 @@ public class SysDepartServiceImpl extends ServiceImpl<SysDepartMapper, SysDepart
 
     @Override
     public void sort(Long id, Integer sort) {
-
         SysDepart depart = this.getById(id);
         SysDepart exchange = null;
 
@@ -174,11 +166,10 @@ public class SysDepartServiceImpl extends ServiceImpl<SysDepartMapper, SysDepart
      * @return
      */
     private void fillCode(SysDepartDTO reqDTO){
-
         // 前缀
         String code = "";
 
-        if(StringUtils.isNotBlank(reqDTO.getParentId().toString())
+        if(reqDTO.getParentId()!=null
                 && !ROOT_TAG.equals(reqDTO.getParentId())){
             SysDepart parent = this.getById(reqDTO.getParentId());
             code = parent.getDeptCode();
@@ -222,7 +213,6 @@ public class SysDepartServiceImpl extends ServiceImpl<SysDepartMapper, SysDepart
      * @param item
      */
     private void fillChildren(Map<Long,List<SysDepartTreeDTO>> map, SysDepartTreeDTO item){
-
         //设置子类
         if(map.containsKey(item.getId())){
 
@@ -239,7 +229,6 @@ public class SysDepartServiceImpl extends ServiceImpl<SysDepartMapper, SysDepart
 
     @Override
     public List<Long> listAllSubIds(Long id){
-
         List<Long> ids = new ArrayList<>();
         this.cycleAllSubs(ids, id);
         return ids;
@@ -252,7 +241,6 @@ public class SysDepartServiceImpl extends ServiceImpl<SysDepartMapper, SysDepart
      * @param id
      */
     private void cycleAllSubs(List<Long> list, Long id){
-
         // 添加ID
         list.add(id);
 
@@ -274,7 +262,6 @@ public class SysDepartServiceImpl extends ServiceImpl<SysDepartMapper, SysDepart
      * @param id
      */
     private void cycleAllParent(List<Long> list, Long id){
-
         // 往上递归获得父类
         list.add(id);
         SysDepart depart = this.getById(id);

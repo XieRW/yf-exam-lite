@@ -16,7 +16,6 @@ import lombok.Data;
 @Data
 @ApiModel(value="试卷列表响应类", description="试卷列表响应类")
 public class PaperListRespDTO extends PaperDTO {
-
     private static final long serialVersionUID = 1L;
 
     @ApiModelProperty(value = "人员", required=true)

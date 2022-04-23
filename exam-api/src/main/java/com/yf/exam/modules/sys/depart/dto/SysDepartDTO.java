@@ -18,7 +18,6 @@ import java.io.Serializable;
 @Data
 @ApiModel(value="部门信息", description="部门信息")
 public class SysDepartDTO implements Serializable {
-
     private static final long serialVersionUID = 1L;
     
     

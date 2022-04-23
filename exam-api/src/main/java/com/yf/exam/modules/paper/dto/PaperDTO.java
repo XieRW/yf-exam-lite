@@ -20,9 +20,7 @@ import java.util.Date;
 @Data
 @ApiModel(value="试卷", description="试卷")
 public class PaperDTO implements Serializable {
-
     private static final long serialVersionUID = 1L;
-
 
     @ApiModelProperty(value = "试卷ID", required=true)
     private Long id;
@@ -76,5 +74,4 @@ public class PaperDTO implements Serializable {
 
     @ApiModelProperty(value = "截止时间")
     private Date limitTime;
-    
 }

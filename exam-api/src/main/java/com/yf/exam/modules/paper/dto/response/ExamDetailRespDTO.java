@@ -12,8 +12,6 @@ import java.util.List;
 @Data
 @ApiModel(value="考试详情", description="考试详情")
 public class ExamDetailRespDTO extends PaperDTO {
-
-
     @ApiModelProperty(value = "单选题列表", required=true)
     private List<PaperQuDTO> radioList;
 

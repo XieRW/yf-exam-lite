@@ -17,7 +17,6 @@ import java.io.Serializable;
 @Data
 @ApiModel(value="试卷考题", description="试卷考题")
 public class PaperQuDTO implements Serializable {
-
     private static final long serialVersionUID = 1L;
 
 

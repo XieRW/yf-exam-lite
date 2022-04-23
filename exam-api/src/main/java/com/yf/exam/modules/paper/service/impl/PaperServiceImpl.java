@@ -57,8 +57,6 @@ import java.util.*;
 */
 @Service
 public class PaperServiceImpl extends ServiceImpl<PaperMapper, Paper> implements PaperService {
-
-
     @Autowired
     private SysUserService sysUserService;
 
@@ -103,7 +101,6 @@ public class PaperServiceImpl extends ServiceImpl<PaperMapper, Paper> implements
 
     @Override
     public Long createPaper(Long userId, Long examId) {
-
         // 查找考试
         ExamDTO exam = examService.findById(examId);
 
@@ -136,8 +133,6 @@ public class PaperServiceImpl extends ServiceImpl<PaperMapper, Paper> implements
 
     @Override
     public ExamDetailRespDTO paperDetail(Long paperId) {
-
-
         ExamDetailRespDTO respDTO = new ExamDetailRespDTO();
 
         // 试题基本信息
@@ -170,7 +165,6 @@ public class PaperServiceImpl extends ServiceImpl<PaperMapper, Paper> implements
 
     @Override
     public ExamResultRespDTO paperResult(Long paperId) {
-
         ExamResultRespDTO respDTO = new ExamResultRespDTO();
 
         // 试题基本信息
@@ -210,7 +204,6 @@ public class PaperServiceImpl extends ServiceImpl<PaperMapper, Paper> implements
      * @return
      */
     private List<PaperQu> generateByRepo(Long examId, Integer level){
-
         // 查找规则指定的题库
         List<ExamRepoExtDTO> list = examRepoService.listByExam(examId);
 
@@ -266,7 +259,6 @@ public class PaperServiceImpl extends ServiceImpl<PaperMapper, Paper> implements
      * @return
      */
     private PaperQu processPaperQu(ExamRepoDTO repo, Qu qu) {
-
         //保存试题信息
         PaperQu paperQu = new PaperQu();
         paperQu.setQuId(qu.getId());
@@ -301,8 +293,6 @@ public class PaperServiceImpl extends ServiceImpl<PaperMapper, Paper> implements
      * @return
      */
     private Long savePaper(Long userId, ExamDTO exam, List<PaperQu> quList) {
-
-
         // 查找用户
         SysUser user = sysUserService.getById(userId);
 
@@ -344,7 +334,6 @@ public class PaperServiceImpl extends ServiceImpl<PaperMapper, Paper> implements
      * @param quList
      */
     private void savePaperQu(Long paperId, List<PaperQu> quList){
-
         List<PaperQu> batchQuList = new ArrayList<>();
         List<PaperQuAnswer> batchAnswerList = new ArrayList<>();
 
@@ -430,7 +419,6 @@ public class PaperServiceImpl extends ServiceImpl<PaperMapper, Paper> implements
     @Transactional(rollbackFor = Exception.class)
     @Override
     public void handExam(Long paperId) {
-
         //获取试卷信息
         Paper paper = paperService.getById(paperId);
 
@@ -486,7 +474,6 @@ public class PaperServiceImpl extends ServiceImpl<PaperMapper, Paper> implements
     @Transactional(rollbackFor = Exception.class)
     @Override
     public void reviewPaper(ExamResultRespDTO reqDTO) {
-
         List<PaperQuDetailDTO> quList = reqDTO.getQuList();
         List<PaperQu> list = new ArrayList<>();
         for(PaperQuDetailDTO item: quList){
@@ -522,7 +509,6 @@ public class PaperServiceImpl extends ServiceImpl<PaperMapper, Paper> implements
 
     @Override
     public List<Paper> findDeadPapers() {
-
         // 结束后两分钟，非正常交卷
         Calendar cl = Calendar.getInstance();
         cl.setTimeInMillis(System.currentTimeMillis());
@@ -540,7 +526,6 @@ public class PaperServiceImpl extends ServiceImpl<PaperMapper, Paper> implements
     @Transactional(rollbackFor = Exception.class)
     @Override
     public void breakExam(Long paperId) {
-
         Paper paper = new Paper();
         paper.setId(paperId);
         paper.setState(PaperState.BREAK);

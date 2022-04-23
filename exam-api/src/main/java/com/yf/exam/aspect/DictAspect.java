@@ -33,7 +33,6 @@ import java.util.List;
 @Component
 @Slf4j
 public class DictAspect {
-
     @Autowired
     private SysDictService sysDictService;
 
@@ -82,7 +81,6 @@ public class DictAspect {
      * @param result
      */
     private void parseFullDictText(Object result) {
-
         try {
 
             Object rest = ((ApiRest) result).getData();
@@ -131,7 +129,6 @@ public class DictAspect {
      * @return
      */
     public Object parseObject(Object record) {
-
         if (record == null) {
             return null;
         }
@@ -206,7 +203,6 @@ public class DictAspect {
      * @return
      */
     private List<Object> processList(Field field, List list) {
-
         // 空判断
         if (list == null || list.size() == 0) {
             return new ArrayList<>();
@@ -286,8 +282,6 @@ public class DictAspect {
      * @return
      */
     private boolean isBaseType(Class clazz) {
-
-
         // 基础数据类型
         if (clazz.equals(java.lang.Integer.class) ||
                 clazz.equals(java.lang.Byte.class) ||
@@ -312,6 +306,4 @@ public class DictAspect {
 
         return false;
     }
-
-
 }
