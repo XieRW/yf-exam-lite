@@ -11,7 +11,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="exam-api" target="8" />
+      <module name="exam-api" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
