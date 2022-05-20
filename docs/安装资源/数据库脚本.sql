@@ -41,7 +41,7 @@
       KEY `open_type` (`open_type`),
       KEY `level` (`level`),
       KEY `join_type` (`join_type`)
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='课程';
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='考试';
 
     -- ----------------------------
     -- Records of el_exam
@@ -101,7 +101,7 @@
     -- ----------------------------
     DROP TABLE IF EXISTS `el_paper`;
     CREATE TABLE `el_paper` (
-                                `id` bigint NOT NULL AUTO_INCREMENT COMMENT '试卷ID',
+      `id` bigint NOT NULL AUTO_INCREMENT COMMENT '试卷ID',
       `user_id` bigint NOT NULL COMMENT '用户ID',
       `depart_id` bigint NOT NULL COMMENT '班级ID',
       `exam_id` bigint NOT NULL COMMENT '规则ID',
