@@ -338,11 +338,11 @@ export default {
         this.paperData = response.data
 
         // 获得第一题内容
-        if (this.paperData.radioList) {
+        if (this.paperData.radioList !== undefined && this.paperData.radioList.length !== 0) {
           this.cardItem = this.paperData.radioList[0]
-        } else if (this.paperData.multiList) {
+        } else if (this.paperData.multiList !== undefined && this.paperData.multiList.length !== 0) {
           this.cardItem = this.paperData.multiList[0]
-        } else if (this.paperData.judgeList) {
+        } else if (this.paperData.judgeList !== undefined && this.paperData.judgeList.length !== 0) {
           this.cardItem = this.paperData.judgeList[0]
         }
 
