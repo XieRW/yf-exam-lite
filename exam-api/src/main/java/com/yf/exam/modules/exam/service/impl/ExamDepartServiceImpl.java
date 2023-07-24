@@ -33,7 +33,7 @@ public class ExamDepartServiceImpl extends ServiceImpl<ExamDepartMapper, ExamDep
 
         // 再增加
         if(CollectionUtils.isEmpty(departs)){
-            throw new ServiceException(1, "请至少选择选择一个部门！！");
+            throw new ServiceException(1, "请至少选择选择一个班级！！");
         }
         List<ExamDepart> list = new ArrayList<>();
 

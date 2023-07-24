@@ -17,7 +17,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @ApiModel(value="接口响应", description="接口响应")
 public class ApiRest<T>{
-
     /**
      * 响应消息
      */
@@ -28,7 +27,6 @@ public class ApiRest<T>{
      */
     @ApiModelProperty(value = "响应代码,0为成功,1为失败", required = true)
     private Integer code;
-
     /**
      * 请求或响应body
      */

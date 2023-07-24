@@ -46,6 +46,7 @@ public class SysUserController extends BaseController {
      * @return
      */
     @CrossOrigin
+    @MyLog("用户登录")
     @ApiOperation(value = "用户登录")
     @RequestMapping(value = "/login", method = {RequestMethod.POST})
     public ApiRest<SysUserLoginDTO> login(@RequestBody SysUserLoginReqDTO reqDTO) {

@@ -100,8 +100,6 @@ public class QuServiceImpl extends ServiceImpl<QuMapper, Qu> implements QuServic
 
         // 保存到题库
         quRepoService.saveAll(qu.getId(), qu.getQuType(), reqDTO.getRepoIds());
-
-
     }
 
     @Override

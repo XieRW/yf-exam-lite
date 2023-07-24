@@ -24,7 +24,7 @@ public interface ExamDepartService extends IService<ExamDepart> {
 
 
     /**
-     * 根据考试查找对应的部门
+     * 根据考试查找对应的班级
      * @param examId
      * @return
      */
